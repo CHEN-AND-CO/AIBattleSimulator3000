@@ -1,28 +1,27 @@
-CFLAGS = -g -Wall -pedantic -O3
-ifeq ($(CXX),14)
-	CFLAGS += -std=c++14
-else
-	CFLAGS += -std=c++17
-endif
-LDFLAGS = -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system
-#UNIT = -ftest-coverage -fprofile-arcs
+CFLAGS = -g -Wall -pedantic -std=c++17
+
+LDFLAGS = -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system -llua -ldl
 
 SRC = $(wildcard src/*.cpp)
 NOM = $(basename $(notdir $(SRC)))
 OBJ = $(addprefix obj/, $(addsuffix .o, $(NOM)))
+UNITOBJ = 
 
-all: AIBattleSimulatorClient.out
+all: simulateurPopulation.out
 
-remake: clean AIBattleSimulatorClient.out
+remake: clean simulateurPopulation.out
 
-AIBattleSimulatorClient.out : $(OBJ)
-	g++ obj/* $(LDFLAGS) -o $@
+simulateurPopulation.out : $(OBJ)
+	g++-7 obj/* $(LDFLAGS) -o $@ 
 
 obj/%.o: src/%.cpp
-	g++ -c $< -Iinclude -o $@ $(CFLAGS)
+	g++-7 -c $< -Iinclude -o $@ $(CFLAGS)
 
 clean:
-	rm obj/*.o *.out *.gch -f
+	rm obj/*.o *.out *.gch src/*~ include/*~ -f
 
 clear:
 	rm obj/*.o *.gch -f
+
+#unitTest: clean $(UNITOBJ)
+#	g++ -obj/
