@@ -10,5 +10,10 @@
 	'argN' sont les arguments
   
   ## Commandes ##
+  	
+	id@register:2 userId password
+	id@login:2 userId password
+	
+	id@setDataBlock:3 blockID partNum data...
   
   
