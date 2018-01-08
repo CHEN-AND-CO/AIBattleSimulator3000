@@ -1,3 +1,3 @@
 # AIBattleSimulator3000
 
-Chen&CO
+Chen&Co
