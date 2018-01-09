@@ -1,0 +1,39 @@
+Idees en vrac
+
+Principaux batiments
+-centre ville
+-maison (10 personnes?)
+-centre de collect de ressources (nourriture, pierre, metal, bois, monnaie)
+-centre de recretument ->milice
+-caserne d'infantrie
+-caserne de char/ecurie
+-aeoroport
+-entrepot
+-production de ressources pour la fin de partie
+
+les batiments changent de nom avec les ages
+Ages (nom a determiner):
+-decouverte
+-antiquite
+-moyen age
+-XIXe
+-XXe
+-futur?
+
+stockage des ressources limites
+augmente avec des entrepots (capacite pour chaque ressources modulable)
+
+la milice est une unites de guerre de base tres faible qui est utilise pour creer des unites specialies
+
+2 types de degats:
+-choc
+-penetration
+
+principales caracteristiques des unites militaires:
+-rapidite
+-cac ou distance
+-resistance/PV
+-tyhpe de degats
+-puissance
+
+routes pour deplacement plus rapide
