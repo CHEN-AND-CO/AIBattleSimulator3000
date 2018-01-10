@@ -3,7 +3,6 @@
 
 #include "ComponentManager.hpp"
 #include "EntityManager.hpp"
-#include "Visitor.hpp"
 
 #include <SFML/Graphics.hpp>
 
