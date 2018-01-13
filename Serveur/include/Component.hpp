@@ -15,6 +15,7 @@ struct Component{
 };
 
 struct PositionableComponent: public Component{
+  PositionableComponent(Position& p, bool m):position{p}, movable{m}{}
   Position position;
   bool movable;
   
@@ -22,13 +23,8 @@ struct PositionableComponent: public Component{
   virtual void accept(Visitor& v, Position p);
 };
 
-struct DrawableComponent: public Component{
-  std::shared_ptr<sf::Sprite> sprite;
-
-  virtual void accept(Visitor& v);
-};
-
 struct HealthComponent: public Component{
+  HealthComponent(int h):health{h}{}
   int health;
 
   virtual void accept(Visitor& v);
@@ -38,7 +34,6 @@ class Visitor{
 public:
   virtual ~Visitor() = 0;
   
-  virtual void visit(DrawableComponent& comp) {};
   virtual void visit(PositionableComponent& comp) {};
   virtual void visit(HealthComponent& comp) {};
 

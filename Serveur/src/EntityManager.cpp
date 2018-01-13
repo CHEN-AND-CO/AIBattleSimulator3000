@@ -11,7 +11,7 @@ unsigned int EntityManager::getNextId(){
 }
 
 void EntityManager::removeEntity(unsigned int id){
-  //TODO Dichothomie
+  //TODO(alex) Dichothomie
   for(unsigned int i{0}; i<m_ids.size(); ++i){
     if(m_ids[i] == id){
       m_ids.erase(m_ids.begin() + i);
