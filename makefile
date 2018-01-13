@@ -22,7 +22,7 @@ clean:
 
 clear:clean
 
-push:
+push:pull
 	git add .
 	git commit
 	git push
