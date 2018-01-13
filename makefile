@@ -1,6 +1,6 @@
 CFLAGS = -g -Wall -pedantic -std=c++17
 
-LDFLAGS = -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system -llua -ldl
+LDFLAGS = -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system
 
 SRC = $(wildcard src/*.cpp)
 NOM = $(basename $(notdir $(SRC)))
