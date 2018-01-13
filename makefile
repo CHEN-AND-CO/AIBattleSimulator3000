@@ -30,5 +30,3 @@ push:pull
 pull:
 	git pull
 
-#unitTest: clean $(UNITOBJ)
-#	g++ -obj/
