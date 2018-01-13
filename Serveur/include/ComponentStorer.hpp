@@ -8,7 +8,7 @@
 #include <vector>
 #include <typeindex>
 
-class ComponentManager{
+class ComponentStorer{
 private:
   std::map<std::type_index, std::map<int, std::shared_ptr<Component>>> m_component;
   

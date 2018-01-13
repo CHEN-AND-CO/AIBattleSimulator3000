@@ -1,7 +1,7 @@
-#include "ComponentManager.hpp"
+#include "ComponentStorer.hpp"
 
 std::map<std::type_index, std::shared_ptr<Component>>
-  ComponentManager::getComponentsById(int id) const{
+  ComponentStorer::getComponentsById(int id) const{
   std::map<std::type_index, std::shared_ptr<Component>> val;
 
   for(auto comps: m_component){
@@ -13,7 +13,7 @@ std::map<std::type_index, std::shared_ptr<Component>>
 }
 
 
-void ComponentManager::addComponent(int id,
+void ComponentStorer::addComponent(int id,
 				    std::shared_ptr<Component> c){
   m_component[typeid(*c.get())][id] = c;
 }

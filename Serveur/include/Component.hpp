@@ -11,7 +11,6 @@ class Visitor;
 
 struct Component{
   virtual void accept(Visitor& v) = 0;
-  virtual void accept(Visitor& v, Position p){}
 };
 
 struct PositionableComponent: public Component{
@@ -20,7 +19,6 @@ struct PositionableComponent: public Component{
   bool movable;
   
   virtual void accept(Visitor& v);
-  virtual void accept(Visitor& v, Position p);
 };
 
 struct HealthComponent: public Component{
