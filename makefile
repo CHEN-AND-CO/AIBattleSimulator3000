@@ -7,21 +7,28 @@ NOM = $(basename $(notdir $(SRC)))
 OBJ = $(addprefix obj/, $(addsuffix .o, $(NOM)))
 UNITOBJ = 
 
-all: simulateurPopulation.out
+all: battleSim.out
 
-remake: clean simulateurPopulation.out
+remake: clean battleSim.out
 
-simulateurPopulation.out : $(OBJ)
+batlleSim.out : $(OBJ)
 	g++-7 obj/* $(LDFLAGS) -o $@ 
 
 obj/%.o: src/%.cpp
 	g++-7 -c $< -Iinclude -o $@ $(CFLAGS)
 
 clean:
-	rm obj/*.o *.out *.gch src/*~ include/*~ -f
+	rm obj/*.o *.out *.gch src/*~ include/*~ *~ -f
 
-clear:
-	rm obj/*.o *.gch -f
+clear:clean
+
+push:
+	git add .
+	git commit
+	git push
+
+pull:
+	git pull
 
 #unitTest: clean $(UNITOBJ)
 #	g++ -obj/
