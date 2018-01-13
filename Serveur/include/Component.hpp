@@ -36,8 +36,6 @@ public:
   
   virtual void visit(PositionableComponent& comp) {};
   virtual void visit(HealthComponent& comp) {};
-
-  virtual void visit(PositionableComponent& comp, Position& p){}
 };
 
 inline Visitor::~Visitor(){}
