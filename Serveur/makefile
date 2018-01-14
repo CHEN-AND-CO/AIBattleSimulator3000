@@ -18,7 +18,7 @@ obj/%.o: src/%.cpp
 	g++-7 -c $< -Iinclude -o $@ $(CFLAGS)
 
 clean:
-	rm obj/*.o *.out *.gch src/*~ include/*~ *~  *# -f
+	rm obj/*.o *.out *.gch src/*~ include/*~ *~ ressources/script/*~ *# -f
 
 clear:clean
 
