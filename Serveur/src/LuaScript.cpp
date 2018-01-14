@@ -1,9 +1,10 @@
 #include "LuaScript.hpp"
 
-LuaScript::LuaScript(const std::string& scriptName, std::ostream& os):mOutputStream{os}
+LuaScript::LuaScript(const std::string& scriptName, std::ostream& os):m_scriptName{scriptName},
+								      mOutputStream{os}
 {
   mLua = luaL_newstate();
-  if(luaL_loadfile(mLua, scriptName.c_str()) || lua_pcall(mLua, 0, 0, 0)){
+  if(luaL_loadfile(mLua, m_scriptName.c_str()) || lua_pcall(mLua, 0, 0, 0)){
     mOutputStream << "Error: Script " << scriptName << " has not been loaded\n";
     mLua = nullptr;
   }
@@ -40,4 +41,11 @@ bool LuaScript::luaPutOnStack(const std::string& varName){
 
 void LuaScript::luaCleanStack(){
   lua_pop(mLua, lua_gettop(mLua));
+}
+
+void LuaScript::reloadScript(){
+  if(luaL_loadfile(mLua, m_scriptName.c_str()) || lua_pcall(mLua, 0, 0, 0)){
+    mOutputStream << "Error: Script " << m_scriptName << " has not been loaded\n";
+    mLua = nullptr;
+  }
 }

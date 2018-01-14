@@ -14,6 +14,8 @@ public:
   LuaScript(const std::string& scriptName, std::ostream& os = std::cout);
   ~LuaScript();
 
+  void reloadScript();
+
   //Use for getting a var by it's name
   template<typename T>
   T get(const std::string& varName);
@@ -23,6 +25,7 @@ public:
   std::map<K,V> getAssociativeArray(const std::string& varName);
   
 private:
+  std::string m_scriptName;
   //The lua state we are using
   lua_State* mLua;
   //The output stream we are using to printing mainly error message

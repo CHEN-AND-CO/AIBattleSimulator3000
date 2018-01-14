@@ -1,5 +1,5 @@
-#ifndef COMPONENT_MANAGER_HPP
-#define COMPONENT_MANAGER_HPP
+#ifndef COMPONENT_STORER_HPP
+#define COMPONENT_STORER_HPP
 
 #include "Component.hpp"
 
