@@ -24,8 +24,8 @@ Ages (nom a determiner):
 -futur?
 -magique?
 
-2 arbres d'age : magique ou technique?(pas que de l'un ou que l'autre mais quelques amelioration suivant le choix)
-2 arbres de tech: magique ou non?
+2 arbres d'age : magique et technique(pas que de l'un ou que l'autre mais quelques amelioration suivant le choix)
+2 arbres de tech: magique et scientifique
 
 stockage des ressources limites
 augmente avec des entrepots (capacite pour chaque ressources modulable)
