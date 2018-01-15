@@ -3,20 +3,23 @@
 
 #include "ComponentStorer.hpp"
 #include "EntityManager.hpp"
-#include "LuaScript.hpp"
+
+#include <map>
+#include <memory>
+#include <string>
 
 class EntityCreator{
 public:
-  EntityCreator(const std::string& luaScript,
-		   ComponentStorer& compS,
-		   EntityManager& entM);
+  EntityCreator(ComponentStorer& compS,
+		EntityManager& entM);
   void reloadScript();
+
+private:
   void createTemplate();
   
-private:
-  LuaScript m_lua;
   ComponentStorer& m_compStorer;
   EntityManager& m_entManager;
+  std::map<std::string, std::shared_ptr<Component>> m_entitiesTemplate;
 };
 
 #endif

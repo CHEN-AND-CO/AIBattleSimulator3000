@@ -30,8 +30,7 @@ public:
   std::map<std::type_index, std::shared_ptr<Component>>
     getComponentsById(int id) const ;
 
-  void addComponent(int id, std::shared_ptr<Component> c);
-  
+  void addComponent(int id, std::shared_ptr<Component> c);  
 };
 
 #endif
