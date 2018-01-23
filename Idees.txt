@@ -45,3 +45,5 @@ principales caracteristiques des unites militaires:
 -puissance
 
 routes pour deplacement plus rapide
+
+morale?
