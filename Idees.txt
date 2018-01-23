@@ -3,7 +3,7 @@ Idees en vrac
 Principaux batiments
 -centre ville
 -maison (10 personnes?)
--centre de collect de ressources (nourriture, pierre, metal, bois, monnaie)
+-centre de collect de ressources 
 -centre de recretument ->milice
 -caserne d'infantrie
 -caserne de char/ecurie
@@ -13,6 +13,13 @@ Principaux batiments
 
 differentes civ avec des orientations specifique (eco, infantrie ...)
 
+Ressources:
+nourriture
+pierre
+metal
+bois
+monnaie
+cristaux
 
 les batiments changent de nom avec les ages
 Ages (nom a determiner):
