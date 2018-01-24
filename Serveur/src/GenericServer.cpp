@@ -101,7 +101,10 @@ void GenericServer::action(std::string id, std::string msg) {
 		}
 	}
 	else if (!cmd.command.compare("quit")) {
-		clients.erase(clients)
+		auto it = std::find_if(clients.begin(), clients.end(), [id](std::pair<std::string, std::shared_ptr<ClientData>> a) {return a.first == id; });
+		if (it != clients.end()) {
+			clients.erase(it);
+		}
 	}
 }
 
