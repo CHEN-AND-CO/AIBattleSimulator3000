@@ -32,7 +32,7 @@ void GenericServer::receive() {
 		ClientData tmp = { alphaNumericGeneration(16), nextClient };
 		clients.insert(std::make_pair(std::to_string(clients.size()), std::make_shared<ClientData>(tmp)));
 
-		send(std::to_string(clients.size() - 1), std::string(server_id) + std::string("@auth:1 ") + std::to_string(clients.size() - 1));
+		send(std::to_string(clients.size() - 1), server_id + std::string("@auth:1 ") + tmp.key);
 
 		std::cout << clients.size() - 1 << " is connected\n";
 	}
@@ -79,7 +79,7 @@ void GenericServer::receivePackets() {
 void GenericServer::action(std::string id, std::string msg) {
 	auto cmd = parseCommand(msg);
 
-	if (!cmd.command.compare("quit")) {
+	if (!cmd.command.compare("shutdown")) {
 		alive = false;
 	}
 	else if (!cmd.command.compare("say")) {
@@ -89,13 +89,35 @@ void GenericServer::action(std::string id, std::string msg) {
 		}
 		std::cout << std::endl;
 	}
+	else if (!cmd.command.compare("register")) {
+		if (cmd.args.size() < 3) {
+			send(id, id + "@register:1 ok");
+		}
+		else if (clients[id]->key.compare(cmd.args[0])) {
+			send(id, id + "@register:2 error wrong key");
+		}
+		else {
+			reregister(id, clients[id]->key, cmd.args[1], cmd.args[2]);
+		}
+	}
+	else if (!cmd.command.compare("quit")) {
+		clients.erase(clients)
+	}
+}
+
+void GenericServer::reregister(std::string oldId, std::string oldKey, std::string id, std::string key) {
+	ClientData tmp = { key, clients[oldId]->socket };
+	clients.insert(std::make_pair(id, std::make_shared<ClientData>(tmp)));
+
+	clients.erase(clients.find(oldId));
 }
 
 
+void GenericServer::login(std::string id, std::string key) {
+}
+
 commandForm GenericServer::parseCommand(std::string entry) {
 	commandForm out;
-	out.id = "";
-	out.command = "";
 
 	std::vector<std::string> tmp;
 	std::string stmp;

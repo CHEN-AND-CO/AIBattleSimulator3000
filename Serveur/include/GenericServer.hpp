@@ -36,6 +36,7 @@ public:
 
 	void action(std::string id, std::string msg);
 
+	void reregister(std::string oldId, std::string oldKey, std::string id, std::string key);
 	void login(std::string id, std::string key);
 
 	commandForm parseCommand(std::string entry);
@@ -51,7 +52,7 @@ private:
 	bool alive;
 	std::string message;
 
-	std::string server_id = "###SERVER###";
+	std::string server_id = "SERVER";
 	static const unsigned int MAX_NET_BUFFER_LENGTH = 65536;
 };
 
