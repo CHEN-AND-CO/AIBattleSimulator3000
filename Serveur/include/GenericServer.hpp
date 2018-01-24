@@ -8,12 +8,7 @@
 #include <iostream>
 #include <random>
 
-struct commandForm {
-	std::string id, command;
-	std::vector<std::string> args;
-	int arglen;
-	bool valid;
-};
+#include "cmdFormat.hpp"
 
 struct ClientData {
 	std::string key;
@@ -39,12 +34,7 @@ public:
 	void reregister(std::string oldId, std::string oldKey, std::string id, std::string key);
 	void login(std::string id, std::string key);
 
-	commandForm parseCommand(std::string entry);
-	void printCommand(commandForm cmd);
-	void clearCommand(commandForm& cmd);
-
 	std::string alphaNumericGeneration(std::string::size_type length);
-	std::vector<std::string> split(const std::string& in, const char& token);
 private:
 	std::map<std::string, std::shared_ptr<ClientData>> clients;
 	sf::TcpListener listener;
