@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GENERIC_SERVER_HPP
+#define GENERIC_SERVER_HPP
 
 #include <SFML\Network.hpp>
 #include <memory>
@@ -35,6 +36,8 @@ public:
 
 	void action(std::string id, std::string msg);
 
+	void login(std::string id, std::string key);
+
 	commandForm parseCommand(std::string entry);
 	void printCommand(commandForm cmd);
 	void clearCommand(commandForm& cmd);
@@ -52,3 +55,4 @@ private:
 	static const unsigned int MAX_NET_BUFFER_LENGTH = 65536;
 };
 
+#endif /* GENERIC_SERVER_HPP */

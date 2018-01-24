@@ -10,7 +10,6 @@ GenericServer::GenericServer(const int port)
 	alive = true;
 }
 
-
 GenericServer::~GenericServer()
 {
 }
