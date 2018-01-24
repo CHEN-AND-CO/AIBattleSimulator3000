@@ -43,7 +43,6 @@ private:
 	std::string message;
 
 	std::string server_id = "SERVER";
-	static const unsigned int MAX_NET_BUFFER_LENGTH = 65536;
 };
 
 #endif /* GENERIC_SERVER_HPP */

@@ -30,6 +30,17 @@ cmdFormat::cmdFormat cmdFormat::parseCommand(std::string entry) {
 		out.valid = true;
 	}
 
+	//Arglen correction
+
+	if (out.arglen < out.args.size()) {
+		for (auto i{ out.arglen }; i < out.args.size() - 1; ++i) {
+			out.args[out.arglen - 1] += out.args[i];
+		}
+		for (auto i{ out.arglen }; i < out.args.size() - 1; ++i) {
+			out.args.erase(out.args.begin() + i);
+		}
+	}
+
 	return out;
 }
 

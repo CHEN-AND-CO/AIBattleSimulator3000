@@ -19,5 +19,7 @@ namespace cmdFormat {
 	std::vector<std::string> split(const std::string& in, const char& token);
 }
 
+static const unsigned int MAX_NET_BUFFER_LENGTH = 65536;
+
 #endif /* CMDFORMAT_HPP */
 
