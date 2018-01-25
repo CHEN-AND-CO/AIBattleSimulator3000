@@ -1,5 +1,6 @@
 units = {
-   "milice";
+   "milice",
+   "townCenter"
 }
 
 milice = {
@@ -13,5 +14,19 @@ milice = {
 
    HealthComponent = {
       health = 100
+   }
+}
+
+townCenter = {
+   PositionComponent = {
+      position = {
+	 x = 50,
+	 y = 50
+      },
+      movable = false
+   },
+
+   HelathComponent = {
+      health = 2000
    }
 }

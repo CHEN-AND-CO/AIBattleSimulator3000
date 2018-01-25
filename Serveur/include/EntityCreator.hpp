@@ -9,6 +9,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <cassert>
 
 class EntityCreator: public Visitor{
 public:

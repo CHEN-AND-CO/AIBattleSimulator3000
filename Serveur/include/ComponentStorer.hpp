@@ -26,7 +26,21 @@ public:
     }
     return value;
   }
+  
+  template<typename T>
+  std::shared_ptr<Component> getComponent(int id) const{
+    std::map<int, std::shared_ptr<Component>> value;
+    auto it = mComponent.find(std::type_index(typeid(T)));
+    if (it != mComponent.end()) {
+      try {
+	return it->second.at(id);
+      }catch(std::exception&){}
+    }
+    
+    return nullptr;
+  }
 
+  
   std::map<std::type_index, std::shared_ptr<Component>>
     getComponentsById(int id) const ;
 

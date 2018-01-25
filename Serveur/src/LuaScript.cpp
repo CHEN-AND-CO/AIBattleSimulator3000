@@ -15,7 +15,7 @@ LuaScript::~LuaScript(){
 }
 
 luabridge::LuaRef LuaScript::get(const std::string& varName){
-  return luabridge::getGlobal(mLua, varName.c_str());
+  return luabridge::LuaRef(luabridge::getGlobal(mLua, varName.c_str()));
 }
 
 std::unordered_map<std::string, luabridge::LuaRef> LuaScript::getKeyValueMap(const luabridge::LuaRef& table){

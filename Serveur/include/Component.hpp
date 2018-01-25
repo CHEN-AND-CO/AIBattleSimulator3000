@@ -15,7 +15,7 @@ struct Component{
 };
 
 struct PositionComponent: public Component{
-  PositionComponent(Position& p, bool m):position{p}, movable{m}{}
+  PositionComponent(Position p, bool m):position{p}, movable{m}{}
   Position position;
   bool movable;
   

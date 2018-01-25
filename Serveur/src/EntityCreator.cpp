@@ -14,7 +14,9 @@ int EntityCreator::addEntity(const std::string& entName){
   try{
     for(auto c: mEntitiesTemplate.at(entName)){
       tmpId = id;
-      c->accept(*this);
+      if(c){
+	c->accept(*this);
+      }
     }
   } catch(std::exception&) {
     id = -1;
@@ -36,10 +38,21 @@ void EntityCreator::createTemplate(){
 }
 
 std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& para){
+  assert(!para.isNil() && "Error: no parameters");
+  
   if(compName == "PositionComponent"){
-    auto pTable = para["position"];
-    Position p = Position{pTable["x"].cast<int>(),
-			  pTable["y"].cast<int>()};
+    luabridge::LuaRef pTable = para["position"];
+    
+    assert(pTable.isTable() && "Error : PositionComponent isn't a table");
+    
+    luabridge::LuaRef x = pTable["x"];
+    luabridge::LuaRef y = pTable["y"];
+    
+    assert(!x.isNil() && "Error : PositionComponent.position.x is nil");
+    assert(!y.isNil() && "Error : PositionComponent.position.y is nil");
+    
+    Position p = Position{x.cast<int>(),
+			  y.cast<int>()};
     bool mov = para["movable"].cast<bool>();
     
     return std::make_shared<PositionComponent>(PositionComponent(p,mov));
