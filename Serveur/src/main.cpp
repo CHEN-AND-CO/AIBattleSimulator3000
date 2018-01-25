@@ -7,7 +7,9 @@ int main(){
   EntityManager e;
   EntityCreator eC(c,e,"ressources/script/Entity.lua");
 
-  
+  if(eC.addEntity("milice") == -1){
+    std::cout << "Entity not created\n";
+  }
   
   return 0;
 }

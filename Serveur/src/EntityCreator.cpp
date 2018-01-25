@@ -37,7 +37,9 @@ void EntityCreator::createTemplate(){
 
 std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& para){
   if(compName == "PositionComponent"){
-    Position p{para["position"]["x"].cast<int>(), para["position"]["y"].cast<int>()};
+    auto pTable = para["position"];
+    Position p = Position{pTable["x"].cast<int>(),
+			  pTable["y"].cast<int>()};
     bool mov = para["movable"].cast<bool>();
     
     return std::make_shared<PositionComponent>(PositionComponent(p,mov));

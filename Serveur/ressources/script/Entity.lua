@@ -1,3 +1,7 @@
+units = {
+   "milice";
+}
+
 milice = {
    PositionComponent = {
       position = {

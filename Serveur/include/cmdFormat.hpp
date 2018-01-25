@@ -9,7 +9,7 @@ namespace cmdFormat {
 	struct cmdFormat {
 		std::string id, command;
 		std::vector<std::string> args;
-		int arglen;
+		unsigned int arglen;
 		bool valid;
 	};
 

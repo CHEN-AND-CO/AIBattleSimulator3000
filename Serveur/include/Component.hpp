@@ -7,6 +7,7 @@
 #include <array>
 #include <memory>
 
+//Needed for the creation of the components
 class Visitor;
 
 struct Component{
@@ -27,6 +28,8 @@ struct HealthComponent: public Component{
 
   virtual void accept(Visitor& v);
 };
+
+
 
 class Visitor{
 public:

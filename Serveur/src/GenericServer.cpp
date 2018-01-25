@@ -54,7 +54,7 @@ void GenericServer::receivePackets() {
 			if (message.length() > 0) {
 				action(it->first, message);
 				message.clear();
-				for (int i = 0; i < MAX_NET_BUFFER_LENGTH; i++) {
+				for (unsigned i = 0; i < MAX_NET_BUFFER_LENGTH; i++) {
 					buffer[i] = 0;
 				}
 			}
