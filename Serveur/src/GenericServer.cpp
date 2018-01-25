@@ -30,9 +30,9 @@ void GenericServer::receive() {
 		ClientData tmp = { alphaNumericGeneration(16), nextClient };
 		clients.insert(std::make_pair(std::to_string(clients.size()), std::make_shared<ClientData>(tmp)));
 
-		send(std::to_string(clients.size() - 1), server_id + std::string("@auth:1 ") + tmp.key);
+		send(std::to_string(clients.size() - 1), server_id + std::string("@auth:2 ") + std::to_string(clients.size() - 1) + " " + tmp.key);
 
-		std::cout << clients.size() - 1 << " is connected\n";
+		std::cout << clients.size() - 1 << " is connected" << std::endl;
 	}
 
 	receivePackets();
@@ -89,7 +89,7 @@ void GenericServer::action(std::string id, std::string msg) {
 	}
 	else if (!cmd.command.compare("register")) {
 		if (cmd.args.size() < 3) {
-			send(id, id + "@register:1 ok");
+			send(id, id + "@register:2 error wrong command");
 		}
 		else if (clients[id]->key.compare(cmd.args[0])) {
 			send(id, id + "@register:2 error wrong key");
