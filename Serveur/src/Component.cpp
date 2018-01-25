@@ -1,6 +1,6 @@
 #include "Component.hpp"
 
-void PositionableComponent::accept(Visitor& v){
+void PositionComponent::accept(Visitor& v){
   v.visit(*this);
 }
 

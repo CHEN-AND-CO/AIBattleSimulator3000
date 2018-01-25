@@ -10,11 +10,11 @@
 class Visitor;
 
 struct Component{
-  virtual void accept(Visitor& v) = 0;
+  virtual void accept(Visitor& v)=0;
 };
 
-struct PositionableComponent: public Component{
-  PositionableComponent(Position& p, bool m):position{p}, movable{m}{}
+struct PositionComponent: public Component{
+  PositionComponent(Position& p, bool m):position{p}, movable{m}{}
   Position position;
   bool movable;
   
@@ -32,7 +32,7 @@ class Visitor{
 public:
   virtual ~Visitor() = 0;
   
-  virtual void visit(PositionableComponent& comp) {};
+  virtual void visit(PositionComponent& comp) {};
   virtual void visit(HealthComponent& comp) {};
 };
 

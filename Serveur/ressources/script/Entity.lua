@@ -1,5 +1,5 @@
 milice = {
-   PositionableComponent = {
+   PositionComponent = {
       position = {
 	 x = 10,
 	 y = 10

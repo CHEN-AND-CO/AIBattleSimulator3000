@@ -10,15 +10,15 @@
 
 class ComponentStorer{
 private:
-  std::map<std::type_index, std::map<int, std::shared_ptr<Component>>> m_component;
+  std::map<std::type_index, std::map<int, std::shared_ptr<Component>>> mComponent;
   
 public:
   template<typename T>
   std::map<int, std::shared_ptr<Component>>
     getComponentsByType() const{
     std::map<int, std::shared_ptr<Component>> value;
-    auto it = m_component.find(std::type_index(typeid(T)));
-    if (it != m_component.end()) {
+    auto it = mComponent.find(std::type_index(typeid(T)));
+    if (it != mComponent.end()) {
       value = it->second;
     }
     else{

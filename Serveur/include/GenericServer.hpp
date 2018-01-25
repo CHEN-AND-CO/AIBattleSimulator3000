@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SFML\Network.hpp>
+#include <SFML/Network.hpp>
 #include <memory>
 #include <string>
 #include <unordered_map>

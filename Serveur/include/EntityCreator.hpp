@@ -3,23 +3,35 @@
 
 #include "ComponentStorer.hpp"
 #include "EntityManager.hpp"
+#include "LuaScript.hpp"
 
 #include <map>
 #include <memory>
 #include <string>
+#include <vector>
 
-class EntityCreator{
+class EntityCreator: public Visitor{
 public:
   EntityCreator(ComponentStorer& compS,
-		EntityManager& entM);
-  void reloadScript();
+		EntityManager& entM,
+		const std::string& scriptPath);
+  int addEntity(const std::string& entName);
 
+  void visit(PositionComponent&);
+  void visit(HealthComponent&);
+  
 private:
   void createTemplate();
+
+  int tmpId;
   
-  ComponentStorer& m_compStorer;
-  EntityManager& m_entManager;
-  std::map<std::string, std::shared_ptr<Component>> m_entitiesTemplate;
+  LuaScript mLua;
+  
+  ComponentStorer& mCompStorer;
+  EntityManager& mEntManager;
+  std::map<std::string, std::vector<std::shared_ptr<Component>>> mEntitiesTemplate;
 };
+
+std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& parametres);
 
 #endif
