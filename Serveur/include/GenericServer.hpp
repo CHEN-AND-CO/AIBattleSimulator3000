@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GENERIC_SERVER_HPP
+#define GENERIC_SERVER_HPP
 
 #include <SFML/Network.hpp>
 #include <memory>
@@ -7,12 +8,7 @@
 #include <iostream>
 #include <random>
 
-struct commandForm {
-	std::string id, command;
-	std::vector<std::string> args;
-	int arglen;
-	bool valid;
-};
+#include "cmdFormat.hpp"
 
 struct ClientData {
 	std::string key;
@@ -35,12 +31,10 @@ public:
 
 	void action(std::string id, std::string msg);
 
-	commandForm parseCommand(std::string entry);
-	void printCommand(commandForm cmd);
-	void clearCommand(commandForm& cmd);
+	void reregister(std::string oldId, std::string oldKey, std::string id, std::string key);
+	void login(std::string id, std::string key);
 
 	std::string alphaNumericGeneration(std::string::size_type length);
-	std::vector<std::string> split(const std::string& in, const char& token);
 private:
 	std::map<std::string, std::shared_ptr<ClientData>> clients;
 	sf::TcpListener listener;
@@ -48,7 +42,7 @@ private:
 	bool alive;
 	std::string message;
 
-	std::string server_id = "###SERVER###";
-	static const unsigned int MAX_NET_BUFFER_LENGTH = 65536;
+	std::string server_id = "SERVER";
 };
 
+#endif /* GENERIC_SERVER_HPP */

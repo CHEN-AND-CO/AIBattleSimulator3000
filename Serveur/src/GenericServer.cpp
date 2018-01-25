@@ -1,7 +1,5 @@
 #include "GenericServer.hpp"
 
-
-
 GenericServer::GenericServer(const int port)
 {
 	listener.listen(port);
@@ -9,7 +7,6 @@ GenericServer::GenericServer(const int port)
 
 	alive = true;
 }
-
 
 GenericServer::~GenericServer()
 {
@@ -33,7 +30,7 @@ void GenericServer::receive() {
 		ClientData tmp = { alphaNumericGeneration(16), nextClient };
 		clients.insert(std::make_pair(std::to_string(clients.size()), std::make_shared<ClientData>(tmp)));
 
-		send(std::to_string(clients.size() - 1), std::string(server_id) + std::string("@auth:1 ") + std::to_string(clients.size() - 1));
+		send(std::to_string(clients.size() - 1), server_id + std::string("@auth:1 ") + tmp.key);
 
 		std::cout << clients.size() - 1 << " is connected\n";
 	}
@@ -78,9 +75,9 @@ void GenericServer::receivePackets() {
 }
 
 void GenericServer::action(std::string id, std::string msg) {
-	auto cmd = parseCommand(msg);
+	auto cmd = cmdFormat::parseCommand(msg);
 
-	if (!cmd.command.compare("quit")) {
+	if (!cmd.command.compare("shutdown")) {
 		alive = false;
 	}
 	else if (!cmd.command.compare("say")) {
@@ -90,66 +87,35 @@ void GenericServer::action(std::string id, std::string msg) {
 		}
 		std::cout << std::endl;
 	}
-}
-
-
-commandForm GenericServer::parseCommand(std::string entry) {
-	commandForm out;
-	out.id = "";
-	out.command = "";
-
-	std::vector<std::string> tmp;
-	std::string stmp;
-
-	tmp = split(entry, ' ');
-	stmp = tmp[0];
-	tmp.erase(tmp.begin());
-	out.args = tmp;
-	tmp.clear();
-
-	tmp = split(stmp, '@');
-	if (tmp.size() > 0) out.id = tmp[0];
-	if (tmp.size() > 1) out.command = tmp[1];
-	tmp.clear();
-
-	tmp = split(out.command, ':');
-	if (tmp.size() > 0) out.command = tmp[0];
-	if (tmp.size() > 1) out.arglen = std::atoi(tmp[1].c_str());
-	tmp.clear();
-
-	if (out.id.length() < 1 || out.command.length() < 1 || out.arglen < 0) {
-		out.valid = false;
-	} else {
-		out.valid = true;
-	}
-
-	return out;
-}
-
-
-void GenericServer::printCommand(commandForm cmd) {
-	if (cmd.valid) {
-		std::cout << "id : " << cmd.id << std::endl;
-		std::cout << "command : " << cmd.command << std::endl;
-		std::cout << "arglen : " << cmd.arglen << std::endl;
-		for (auto& ref : cmd.args) {
-			std::cout << ref << "\t";
+	else if (!cmd.command.compare("register")) {
+		if (cmd.args.size() < 3) {
+			send(id, id + "@register:1 ok");
 		}
-		std::cout << std::endl;
+		else if (clients[id]->key.compare(cmd.args[0])) {
+			send(id, id + "@register:2 error wrong key");
+		}
+		else {
+			reregister(id, clients[id]->key, cmd.args[1], cmd.args[2]);
+		}
 	}
-	else {
-		std::cout << "Not a valid Command format" << std::endl;
+	else if (!cmd.command.compare("quit")) {
+		auto it = std::find_if(clients.begin(), clients.end(), [id](std::pair<std::string, std::shared_ptr<ClientData>> a) {return a.first == id; });
+		if (it != clients.end()) {
+			clients.erase(it);
+		}
 	}
 }
 
-void GenericServer::clearCommand(commandForm& cmd) {
-	cmd.args.clear();
-	cmd.arglen = -1;
-	cmd.command.clear();
-	cmd.id.clear();
-	cmd.valid = false;
+void GenericServer::reregister(std::string oldId, std::string oldKey, std::string id, std::string key) {
+	ClientData tmp = { key, clients[oldId]->socket };
+	clients.insert(std::make_pair(id, std::make_shared<ClientData>(tmp)));
+
+	clients.erase(clients.find(oldId));
 }
 
+
+void GenericServer::login(std::string id, std::string key) {
+}
 
 std::string GenericServer::alphaNumericGeneration(std::string::size_type length) {
 	std::string charset =	"0123456789"
@@ -165,23 +131,6 @@ std::string GenericServer::alphaNumericGeneration(std::string::size_type length)
 	while (length--) {
 		out += charset[distribution(generator)];
 	}
-
-	return out;
-}
-
-std::vector<std::string> GenericServer::split(const std::string& in, const char& token) {
-	std::vector<std::string> out;
-	std::string buffer;
-
-	for (const auto &n : in) {
-		if (n != token)
-			buffer += n;
-		else if (n == token && buffer != "") {
-			out.push_back(buffer);
-			buffer = "";
-		}
-	}
-	if (buffer != "") out.push_back(buffer);
 
 	return out;
 }
