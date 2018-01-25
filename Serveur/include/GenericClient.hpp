@@ -10,10 +10,10 @@
 class GenericClient
 {
 public:
-	GenericClient(std::string address, int port = 30666, std::string name = "") : id{ name } { connect(address, port); }
+	GenericClient(std::string address, unsigned short port = 30666, std::string name = "") : id{ name } { connect(address, port); }
 	~GenericClient();
 
-	sf::Socket::Status connect(std::string address, int port);
+	sf::Socket::Status connect(std::string address, unsigned short port);
 	std::string receive();
 	std::string blockingReceive();
 	sf::Socket::Status send(const std::string& msg);

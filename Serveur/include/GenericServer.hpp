@@ -18,7 +18,7 @@ struct ClientData {
 class GenericServer
 {
 public:
-	GenericServer(const int port = 30666);
+	GenericServer(const unsigned short port = 30666);
 	~GenericServer();
 
 	bool isAlive() const { return alive; }

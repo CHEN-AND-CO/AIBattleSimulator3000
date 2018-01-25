@@ -4,7 +4,7 @@ GenericClient::~GenericClient()
 {
 }
 
-sf::Socket::Status GenericClient::connect(std::string address, int port) {
+sf::Socket::Status GenericClient::connect(std::string address, unsigned short port) {
 	sf::Socket::Status stat = socket.connect(address, port);
 	socket.setBlocking(false);
 

@@ -1,6 +1,6 @@
 #include "GenericServer.hpp"
 
-GenericServer::GenericServer(const int port)
+GenericServer::GenericServer(const unsigned short port)
 {
 	listener.listen(port);
 	listener.setBlocking(false);
