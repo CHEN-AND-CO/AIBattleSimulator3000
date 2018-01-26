@@ -14,7 +14,7 @@ private:
   ComponentStorer& mCompStorer;
   EntityManager& mEntManager;
 
-  PositionComponent tmp;
+  PositionComponent tmpGet, tmpSet;
 };
 
 #endif

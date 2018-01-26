@@ -12,10 +12,10 @@ all: battleSimS.out
 remake: clean battleSimS.out
 
 battleSimS.out : $(OBJ)
-	g++-7 obj/* $(LDFLAGS) -o $@ 
+	g++-7 obj/* -o $@ $(LDFLAGS)
 
 obj/%.o: src/%.cpp
-	g++-7 -c $< -Iinclude -o $@ $(CFLAGS)
+	g++-7 $(CFLAGS) -Iinclude -c $< -o $@
 
 clean:
 	rm obj/*.o *.out *.gch src/*~ include/*~ *~ ressources/script/*~ *# -f

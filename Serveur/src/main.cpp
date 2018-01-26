@@ -13,6 +13,7 @@ int main(){
   eC.addEntity("townCenter");
   
   m.update();
+  m.update();
   
   return 0;
 }

@@ -23,3 +23,12 @@ Position Position::operator++(int){
   operator++();
   return tmp;
 }
+
+Position operator*(const Position& l, int d){
+  return Position{l.x*d, l.y*d};
+}
+
+Position& Position::operator*=(int d){
+  *this = *this * d;
+  return *this;
+}
