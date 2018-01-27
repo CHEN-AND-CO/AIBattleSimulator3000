@@ -1,0 +1,40 @@
+{
+    "map":[
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,1,1,1,1,0,0,0,0,2,2,0,0,2,0,0,0,0],
+        [0,0,0,1,1,1,1,1,0,2,2,2,2,2,2,2,2,0,0,0],
+        [0,0,0,0,1,1,1,1,0,0,2,2,2,2,2,2,2,2,0,0],
+        [0,0,0,0,0,0,1,1,0,0,0,2,2,2,2,2,2,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    ],
+    "materials":[
+        {
+            "id": 0, 
+            "name": "grass", 
+            "texture": "textures/16x16/grass.png", 
+            "EffectComponent": ""
+        },
+        {
+            "id": 1, 
+            "name": "water", 
+            "texture": "textures/16x16/water.png", 
+            "EffectComponent": "scripts/effects/water.lua"
+        },
+        {
+            "id": 2, 
+            "name": "forest", 
+            "texture": "textures/16x16/tree_cluster.png", 
+            "EffectComponent": "scripts/effects/forest.lua"
+        }
+    ],
+    "projection": "tore",
+    "tilesize": 16,
+    "width": 20,
+    "heigth": 10,
+    "name": "Super map de test"
+}
+
