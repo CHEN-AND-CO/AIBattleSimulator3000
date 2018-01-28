@@ -14,6 +14,11 @@ class Material
 public:
     Material(); //Constructeur vide
     Material(char nid, std::string nname, std::string ntex) : id(nid), name(nname), texturePath(ntex) {}
+
+    int getID() { return id; }
+    std::string getName() { return name; }
+    std::string getTexturePath() { return texturePath; }
+
 protected:
     char id;                //Material ID to be used in map tiles
     std::string name;       //Material name, ex. "grass" or "patate"

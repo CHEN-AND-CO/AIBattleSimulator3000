@@ -8,5 +8,7 @@ int main(int argc, char *argv[])
 {
     Map themap("testmap.gmf");
 
+    std::cout << themap << '\n';
+
     return 0;
 }

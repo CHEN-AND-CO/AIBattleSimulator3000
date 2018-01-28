@@ -17,7 +17,6 @@ Map::Map(int h, int w, int tilesz) : tilesize(tilesz)
 
 Map::Map(std::string filepath)
 {
-    int width, height;
     std::ifstream file(filepath);
     nlohmann::json json_map;
     
@@ -25,17 +24,16 @@ Map::Map(std::string filepath)
 
     name = json_map["name"];
     tilesize = json_map["tilesize"];
-    //width = json_map["width"];
-    //height = json_map["height"];
+
 
     std::vector<std::vector<int>> tmp = json_map["map"];
 
-    for ( int i = 0 ; i < tmp.size() ; ++i )
+    for ( unsigned int i = 0 ; i < tmp.size() ; ++i )
     {
         std::vector<Tile> tmpline;
         maep.push_back(tmpline);
 
-        for ( int j = 0 ; j < tmp[i].size() ; ++j )
+        for ( unsigned int j = 0 ; j < tmp[i].size() ; ++j )
         {
             maep[i].push_back(Tile(j, i, (char)tmp[i][j]));
         }
@@ -65,10 +63,6 @@ void Map::setTile(int x, int y, Tile newTile)
 
 bool Map::save(std::string filepath)
 {
-    std::ofstream file(filepath);
-
-    file << "lol ca marche\n";
-
     return false;
 }
 

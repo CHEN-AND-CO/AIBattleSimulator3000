@@ -16,6 +16,7 @@ public:
 
     int getX() { return x; }
     int getY() { return y; }
+    char getMaterial() { return material; }
 
 private:
     int x;
