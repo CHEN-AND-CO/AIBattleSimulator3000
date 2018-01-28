@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "json.hpp"
 #include "Material.hpp"
 #include "Tile.hpp"
@@ -11,14 +12,14 @@
 class Map
 {
 public:
-    Map(int h, int w);
+    Map(int h, int w, int tilesz);
     Map(std::string filepath);
 
     int getWidth() const;
     int getHeight() const;
 
     Tile getTile(int x, int y) const;
-    void setTile(int x, int y);
+    void setTile(int x, int y, Tile newTile);
 
     //void resize(int nw, int nh);
     bool save(std::string filepath);
@@ -27,11 +28,11 @@ public:
     ~Map();
     
 private:
-    std::vector<std::vector<Tile>> map;
+    std::vector<std::vector<Tile>> maep;
     std::vector<Material> materials;
     std::string name;
     bool isTore;
-    const int tilesize;
+    int tilesize;
 
 };
 

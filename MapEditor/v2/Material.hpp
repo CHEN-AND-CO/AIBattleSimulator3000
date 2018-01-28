@@ -7,6 +7,8 @@
 #ifndef __INC_MATERIAL
 #define __INC_MATERIAL
 
+#include <string>
+
 class Material
 {
 public:
