@@ -25,6 +25,11 @@ Map::Map(std::string filepath)
     name = json_map["name"];
     tilesize = json_map["tilesize"];
 
+    for ( auto material:json_map["materials"] )
+    {
+        Material tmpmat((int)material["id"], material["name"], material["texture"]);
+        materials.push_back(tmpmat);
+    }
 
     std::vector<std::vector<int>> tmp = json_map["map"];
 
@@ -38,6 +43,7 @@ Map::Map(std::string filepath)
             maep[i].push_back(Tile(j, i, (char)tmp[i][j]));
         }
     }
+
     std::cout << "Map " << name << " loaded, tile size :" << tilesize << '\n';
 }
 
