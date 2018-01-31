@@ -10,7 +10,9 @@
 
 class LuaWritter{
 public:
-  LuaWritter(std::ostream& os = std::cout):mOs{os}{}
+  LuaWritter(std::ostream& os = std::cout):mOs{os}{
+    mOs << std::boolalpha;
+  }
 
   template<typename T>
   void write(std::string s, T t){
@@ -32,6 +34,8 @@ private:
 
   template<typename T>
   void writeValue(std::vector<T> val);
+  template<typename T>
+  void writeValue(std::array<T> val);
   template<typename T, typename U>
   void writeValue(std::map<T, U> val);
   
@@ -58,5 +62,17 @@ void LuaWritter::writeValue(std::map<T, U> val){
   }
   mOs << "}";
 }
+
+
+template<typename T>
+void LuaWritter::writeValue(std::array<T> val){
+  mOs << "{";
+  for(auto v: val){
+    writeValue(v);
+    mOs << ",";
+  }
+  mOs << "}";
+}
+
 
 #endif
