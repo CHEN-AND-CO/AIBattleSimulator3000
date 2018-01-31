@@ -10,11 +10,13 @@ MoveSystem::MoveSystem(ComponentStorer& comps,
 void MoveSystem::update(){
   for(auto id: mEntManager.getEntitiesId()){
     auto c = mCompStorer.getComponent<PositionComponent>(id);
-    if(id == 0){
-      tmpSet.position = tmpGet.position * 2;
-    }
+    c->accept(*this);
+    tmpSet.position = tmpGet.position * 2;
     c->accept(*this);
     std::cout << tmpGet.position.x << "\n";
+
+    tmpGet.position = Position{-1,-1};
+    tmpSet.position = Position{-1,-1};
   }
 }
 

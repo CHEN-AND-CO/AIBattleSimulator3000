@@ -11,9 +11,9 @@ int main(){
     std::cout << "Entity not created\n";
   }
   eC.addEntity("townCenter");
-  
+
+  for(int i{0}; i<4; ++i){
   m.update();
-  m.update();
-  
+  }
   return 0;
 }
