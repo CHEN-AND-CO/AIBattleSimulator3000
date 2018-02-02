@@ -1,24 +1,34 @@
 CFLAGS = -g -Wall -pedantic -std=c++17
 
-LDFLAGS = -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system -llua -ldl
+LDFLAGS = -lsfml-network -lsfml-graphics -lsfml-window -lsfml-system
 
-SRC = $(wildcard src/*.cpp)
-NOM = $(basename $(notdir $(SRC)))
-OBJ = $(addprefix obj/, $(addsuffix .o, $(NOM)))
-UNITOBJ = 
+all: server.out client.out
 
-all: battleSimS.out
+remake: clean server.out client.out
 
-remake: clean battleSimS.out
+server.out : obj/server.o obj/GenericServer.o obj/cmdFormat.o
+	g++-7  obj/server.o obj/GenericServer.o obj/cmdFormat.o $(LDFLAGS) -o server.out
 
-battleSimS.out : $(OBJ)
-	g++-7 obj/* $(LDFLAGS) -o $@ 
+client.out : obj/client.o obj/GenericClient.o obj/cmdFormat.o
+	g++-7  obj/client.o obj/GenericClient.o obj/cmdFormat.o $(LDFLAGS) -o client.out
 
-obj/%.o: src/%.cpp
-	g++-7 -c $< -Iinclude -o $@ $(CFLAGS)
+obj/client.o: src/client.cpp src/cmdFormat.cpp src/GenericClient.cpp
+	g++-7 -c src/client.cpp -Iinclude -o obj/client.o $(CFLAGS)
+
+obj/server.o: src/server.cpp src/cmdFormat.cpp src/GenericServer.cpp
+	g++-7 -c src/server.cpp -Iinclude -o obj/server.o $(CFLAGS)
+
+obj/GenericClient.o: src/GenericClient.cpp
+	g++-7 -c src/GenericClient.cpp -Iinclude -o obj/GenericClient.o $(CFLAGS)
+
+obj/GenericServer.o: src/GenericServer.cpp
+	g++-7 -c src/GenericServer.cpp -Iinclude -o obj/GenericServer.o $(CFLAGS)
+
+obj/cmdFormat.o: src/cmdFormat.cpp
+	g++-7 -c src/cmdFormat.cpp -Iinclude -o obj/cmdFormat.o $(CFLAGS)
 
 clean:
-	rm obj/*.o *.out *.gch src/*~ include/*~ *~ ressources/script/*~ *# -f
+	rm obj/*.o *.out *.gch -f
 
 clear:clean
 
