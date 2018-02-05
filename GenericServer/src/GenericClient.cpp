@@ -34,6 +34,8 @@ sf::Socket::Status GenericClient::connect(std::string address, unsigned short po
 		key = serverReply.args[1];
 	}
 
+	std::cout << "Auth finished !" << std::endl;
+
 	return stat;
 }
 

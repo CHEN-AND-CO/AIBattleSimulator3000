@@ -11,12 +11,10 @@ int main(int argc, char **argv)
     {
         address = argv[0];
     }
-
     if (argc > 2)
     {
         port = (unsigned int)std::atoi(argv[1]);
     }
-
     if (argc > 3)
     {
         name = argv[2];

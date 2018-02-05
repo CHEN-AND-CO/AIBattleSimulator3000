@@ -9,7 +9,7 @@
 
 class GenericClient
 {
-  public:
+public:
 	GenericClient(std::string address, unsigned short port = 30666, std::string name = "") : id{name} { connect(address, port); }
 	~GenericClient();
 
@@ -22,7 +22,9 @@ class GenericClient
 	void toggleAlive() { alive = !alive; }
 	void setAlive(bool parm) { alive = parm; }
 
-  private:
+	std::string getId() const { return id; }
+
+private:
 	sf::TcpSocket socket;
 	std::string id, key;
 	bool alive = true;

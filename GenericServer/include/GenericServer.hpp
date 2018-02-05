@@ -7,17 +7,19 @@
 #include <unordered_map>
 #include <iostream>
 #include <random>
+#include <utility>
 
 #include "cmdFormat.hpp"
 
-struct ClientData {
+struct ClientData
+{
 	std::string key;
 	std::shared_ptr<sf::TcpSocket> socket;
 };
 
 class GenericServer
 {
-public:
+  public:
 	GenericServer(const unsigned short port = 30666);
 	~GenericServer();
 
@@ -25,9 +27,9 @@ public:
 	void toggleAlive() { alive = !alive; }
 	void setAlive(bool parm) { alive = parm; }
 
-	void send(const std::string id, const std::string& msg);
-	void receive();
-	void receivePackets();
+	void send(const std::string id, const std::string &msg);
+	std::vector<std::pair<std::string, std::string>> receive();
+	std::vector<std::pair<std::string, std::string>> receivePackets();
 
 	void action(std::string id, std::string msg);
 
@@ -35,7 +37,8 @@ public:
 	void login(std::string id, std::string key);
 
 	std::string alphaNumericGeneration(std::string::size_type length);
-private:
+
+  private:
 	std::map<std::string, std::shared_ptr<ClientData>> clients;
 	sf::TcpListener listener;
 
