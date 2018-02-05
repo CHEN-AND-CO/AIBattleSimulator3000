@@ -1,4 +1,5 @@
 #include <string>
+#include <SFML/System.hpp>
 #include "GenericClient.hpp"
 
 int main(int argc, char **argv)
@@ -34,6 +35,10 @@ int main(int argc, char **argv)
                 std::cout << cmd.args[0] << ":" << cmd.args[1] << std::endl;
             }
         }
+
+        client.send("SERVER@say:1 Hello World !");
+
+        sf::sleep(sf::milliseconds(100));
     }
 
     return 0;

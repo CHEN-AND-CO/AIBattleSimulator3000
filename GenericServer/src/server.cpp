@@ -15,11 +15,22 @@ int main()
 			if (!cmd.command.compare("say"))
 			{
 				std::cout << it.first << " to " << cmd.id << " : ";
+				std::string message(it.first + "@say:1 ");
+
 				for (const auto &it : cmd.args)
 				{
+					if (&it != &cmd.args[0])
+					{
+						std::cout << " ";
+						message += " ";
+					}
 					std::cout << it;
+					message += it;
 				}
 				std::cout << std::endl;
+				message += "\n";
+
+				server.send(cmd.id, message);
 			}
 		}
 	}
