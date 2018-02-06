@@ -8,10 +8,6 @@ GenericServer::GenericServer(const unsigned short port)
 	alive = true;
 }
 
-GenericServer::~GenericServer()
-{
-}
-
 void GenericServer::send(const std::string id, const std::string &msg)
 {
 	auto tmp = clients[id];
@@ -91,16 +87,7 @@ void GenericServer::action(std::string id, std::string msg)
 	if (!cmd.command.compare("shutdown"))
 	{
 		alive = false;
-	} /*
-	else if (!cmd.command.compare("say"))
-	{
-		std::cout << id << " to " << cmd.id << " : ";
-		for (const auto &it : cmd.args)
-		{
-			std::cout << it;
-		}
-		std::cout << std::endl;
-	}*/
+	}
 	else if (!cmd.command.compare("register"))
 	{
 		if (cmd.args.size() < 3)
@@ -115,15 +102,11 @@ void GenericServer::action(std::string id, std::string msg)
 		{
 			reregister(id, clients[id]->key, cmd.args[1], cmd.args[2]);
 		}
-	} /*
+	}
 	else if (!cmd.command.compare("quit"))
 	{
-		auto it = std::find_if(clients.begin(), clients.end(), [id](std::pair<std::string, std::shared_ptr<ClientData>> a) { return a.first == id; });
-		if (it != clients.end())
-		{
-			clients.erase(it);
-		}
-	}*/
+		addToDeadList(id);
+	}
 }
 
 void GenericServer::reregister(std::string oldId, std::string oldKey, std::string id, std::string key)

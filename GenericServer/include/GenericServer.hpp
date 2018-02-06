@@ -21,7 +21,7 @@ class GenericServer
 {
   public:
 	GenericServer(const unsigned short port = 30666);
-	~GenericServer();
+	~GenericServer() {}
 
 	bool isAlive() const { return alive; }
 	void toggleAlive() { alive = !alive; }
