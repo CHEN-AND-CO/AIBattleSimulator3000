@@ -15,6 +15,7 @@ struct cmdFormat
 	bool valid;
 };
 
+std::string toString(cmdFormat &entry);
 cmdFormat parseCommand(std::string entry);
 void printCommand(cmdFormat cmd);
 void clearCommand(cmdFormat &cmd);
