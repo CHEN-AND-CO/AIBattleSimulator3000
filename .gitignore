@@ -3,3 +3,5 @@ MapEditor/v2/Map.o
 .vscode/settings.json
 GenericServer/.vscode/c_cpp_properties.json
 GenericServer/.vscode/settings.json
+MapEditor/main.o
+MapEditor/MapEditor.out
