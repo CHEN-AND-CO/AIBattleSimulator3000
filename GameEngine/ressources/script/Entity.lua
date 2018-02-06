@@ -9,7 +9,10 @@ milice = {
 	 x = 10,
 	 y = 10
       },
-      movable = true
+   },
+
+   SpeedComponent = {
+      speed = 10
    },
 
    HealthComponent = {
@@ -35,7 +38,6 @@ townCenter = {
 	 x = 50,
 	 y = 50
       },
-      movable = false
    },
 
    HealthComponent = {

@@ -4,6 +4,10 @@ void HealthComponent::accept(Visitor& v){
   v.visit(*this);
 }
 
+void SpeedComponent::accept(Visitor& v){
+  v.visit(*this);
+}
+
 void PositionComponent::accept(Visitor& v){
   v.visit(*this);
 }

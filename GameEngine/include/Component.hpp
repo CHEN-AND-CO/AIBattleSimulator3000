@@ -15,9 +15,8 @@ struct Component{
 };
 
 struct PositionComponent: public Component{
-  PositionComponent(Position p, bool m):position{p}, movable{m}{}
+  PositionComponent(Position p):position{p}{}
   Position position;
-  bool movable;
   
   virtual void accept(Visitor& v);
 };
@@ -25,6 +24,14 @@ struct PositionComponent: public Component{
 struct HealthComponent: public Component{
   HealthComponent(int h):health{h}{}
   int health;
+
+  virtual void accept(Visitor& v);
+};
+
+struct SpeedComponent: public Component{
+  SpeedComponent(int s):speed{s}{}
+
+  int speed;
 
   virtual void accept(Visitor& v);
 };
@@ -66,6 +73,7 @@ public:
   virtual void visit(HealthComponent& comp) {}
   virtual void visit(AttackComponent& comp) {}
   virtual void visit(ArmorComponent& comp) {}
+  virtual void visit(SpeedComponent& comp) {}
 };
 
 inline Visitor::~Visitor(){}

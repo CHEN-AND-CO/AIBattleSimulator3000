@@ -9,22 +9,6 @@ EntityCreator::EntityCreator(ComponentStorer& compS,
   createTemplate();
 }
 
-int EntityCreator::addEntity(const std::string& entName){
-  int id = mEntManager.getNextId();
-  try{
-    for(auto c: mEntitiesTemplate.at(entName)){
-      tmpId = id;
-      if(c){
-	c->accept(*this);
-      }
-    }
-  } catch(std::exception&) {
-    mEntManager.removeEntity(id);
-    id = -1;
-  }
-  return id;
-}
-
 void EntityCreator::createTemplate(){
   auto unitsName = mLua.get("units");
 
@@ -40,8 +24,6 @@ void EntityCreator::createTemplate(){
   }
 }
 
-
-
 std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& para){
   assert(!para.isNil() && "Error: no parameters");
   assert(para.isTable() && "Error: parameters aren't a table");
@@ -54,14 +36,13 @@ std::shared_ptr<Component> createComponent(const std::string& compName, luabridg
     
     Position p = Position{x.cast<int>(),
 			  y.cast<int>()};
-    bool mov = para["movable"].cast<bool>();
-    
-    return std::make_shared<PositionComponent>(PositionComponent(p,mov));
+
+    return std::make_shared<PositionComponent>(PositionComponent(p));
   }
   else if(compName == "HealthComponent"){
     int h = para["health"].cast<int>();
 
-    return std::make_shared<HealthComponent>(HealthComponent(h));
+    return std::make_shared<HealthComponent>(h);
   }
   else if(compName == "AttackComponent"){
     int a = para["amount"].cast<int>();
@@ -87,7 +68,7 @@ std::shared_ptr<Component> createComponent(const std::string& compName, luabridg
       std::cerr << "Error: attackType is not recognized\n";
     }
 
-    return std::make_shared<AttackComponent>(AttackComponent(a,d,at));
+    return std::make_shared<AttackComponent>(a,d,at);
   }
   else if(compName == "ArmorComponent"){
     int p,m,s;
@@ -95,10 +76,31 @@ std::shared_ptr<Component> createComponent(const std::string& compName, luabridg
     s = para["shock"].cast<int>();
     m = para["magic"].cast<int>();
 
-    return std::make_shared<ArmorComponent>(ArmorComponent(p,s,m));
+    return std::make_shared<ArmorComponent>(p,s,m);
+  }
+  else if(compName == "SpeedComponent"){
+    int s = para["speed"].cast<int>();
+
+    return std::make_shared<SpeedComponent>(s);
   }
   
   return nullptr;
+}
+
+int EntityCreator::addEntity(const std::string& entName){
+  int id = mEntManager.getNextId();
+  try{
+    for(auto c: mEntitiesTemplate.at(entName)){
+      tmpId = id;
+      if(c){
+	c->accept(*this);
+      }
+    }
+  } catch(std::exception&) {
+    mEntManager.removeEntity(id);
+    id = -1;
+  }
+  return id;
 }
 
 void EntityCreator::visit(PositionComponent& comp){
@@ -115,4 +117,8 @@ void EntityCreator::visit(AttackComponent& comp){
 
 void EntityCreator::visit(ArmorComponent& comp){
   mCompStorer.addComponent(tmpId, std::make_shared<ArmorComponent>(comp));
+}
+
+void EntityCreator::visit(SpeedComponent& comp){
+  mCompStorer.addComponent(tmpId, std::make_shared<SpeedComponent>(comp));
 }

@@ -22,6 +22,7 @@ public:
   void visit(HealthComponent&);
   void visit(AttackComponent&);
   void visit(ArmorComponent&);
+  void visit(SpeedComponent&);
   
 private:
   void createTemplate();
