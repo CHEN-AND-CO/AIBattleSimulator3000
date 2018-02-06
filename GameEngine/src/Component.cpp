@@ -1,11 +1,17 @@
 #include "Component.hpp"
 
-void PositionComponent::accept(Visitor& v){
-  v.visit(*this);
-}
-
 void HealthComponent::accept(Visitor& v){
   v.visit(*this);
 }
 
+void PositionComponent::accept(Visitor& v){
+  v.visit(*this);
+}
 
+void AttackComponent::accept(Visitor& v){
+  v.visit(*this);
+}
+
+void ArmorComponent::accept(Visitor& v){
+  v.visit(*this);
+}

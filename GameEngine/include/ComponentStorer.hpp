@@ -7,6 +7,7 @@
 #include <map>
 #include <vector>
 #include <typeindex>
+#include <iostream>
 
 class ComponentStorer{
 private:
@@ -29,15 +30,12 @@ public:
   
   template<typename T>
   std::shared_ptr<Component> getComponent(int id) const{
-    std::map<int, std::shared_ptr<Component>> value;
-    auto it = mComponent.find(std::type_index(typeid(T)));
-    if (it != mComponent.end()) {
-      try {
-	return it->second.at(id);
-      }catch(std::exception&){}
+    try{
+      return mComponent.at(typeid(T)).at(id);
+    }catch (std::exception&){
+      std::cerr << "Error: Component " << typeid(T).name() << " for id " << id << " has not been found\n";
+      return nullptr;
     }
-    
-    return nullptr;
   }
 
   

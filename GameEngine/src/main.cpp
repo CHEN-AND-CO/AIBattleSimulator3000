@@ -13,7 +13,8 @@ int main(){
   eC.addEntity("townCenter");
 
   for(int i{0}; i<4; ++i){
-  m.update();
+    m.update();
+    std::cout << "\n";
   }
   return 0;
 }

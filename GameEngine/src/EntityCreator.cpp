@@ -19,6 +19,7 @@ int EntityCreator::addEntity(const std::string& entName){
       }
     }
   } catch(std::exception&) {
+    mEntManager.removeEntity(id);
     id = -1;
   }
   return id;
@@ -27,6 +28,8 @@ int EntityCreator::addEntity(const std::string& entName){
 void EntityCreator::createTemplate(){
   auto unitsName = mLua.get("units");
 
+  assert(!unitsName.isNil() && "Error: units doesn't exist or is nil");
+  
   for(int i{0}; i<unitsName.length(); ++i){
     auto unitName = unitsName[i+1].cast<std::string>();
     auto unitCompTable = mLua.get(unitName);
@@ -37,19 +40,17 @@ void EntityCreator::createTemplate(){
   }
 }
 
+
+
 std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& para){
   assert(!para.isNil() && "Error: no parameters");
+  assert(para.isTable() && "Error: parameters aren't a table");
   
   if(compName == "PositionComponent"){
     luabridge::LuaRef pTable = para["position"];
     
-    assert(pTable.isTable() && "Error : PositionComponent isn't a table");
-    
     luabridge::LuaRef x = pTable["x"];
     luabridge::LuaRef y = pTable["y"];
-    
-    assert(!x.isNil() && "Error : PositionComponent.position.x is nil");
-    assert(!y.isNil() && "Error : PositionComponent.position.y is nil");
     
     Position p = Position{x.cast<int>(),
 			  y.cast<int>()};
@@ -62,7 +63,41 @@ std::shared_ptr<Component> createComponent(const std::string& compName, luabridg
 
     return std::make_shared<HealthComponent>(HealthComponent(h));
   }
+  else if(compName == "AttackComponent"){
+    int a = para["amount"].cast<int>();
+    DommageType::Type d;
+    AttackType::Type at;
+    std::string tmp = para["attackType"].cast<std::string>();
+    if(tmp == "melee"){
+      at = AttackType::Melee;
+    }else if(tmp == "distance"){
+      at = AttackType::Distance;
+    }else{
+      std::cerr << "Error: attackType is not recognized\n";
+    }
 
+    tmp = para["dommageType"].cast<std::string>();
+    if(tmp == "shock"){
+      d = DommageType::Shock;
+    }else if(tmp == "magic"){
+      d = DommageType::Magic;
+    }else if(tmp == "pierce"){
+      d = DommageType::Pierce;
+    }else{
+      std::cerr << "Error: attackType is not recognized\n";
+    }
+
+    return std::make_shared<AttackComponent>(AttackComponent(a,d,at));
+  }
+  else if(compName == "ArmorComponent"){
+    int p,m,s;
+    p = para["pierce"].cast<int>();
+    s = para["shock"].cast<int>();
+    m = para["magic"].cast<int>();
+
+    return std::make_shared<ArmorComponent>(ArmorComponent(p,s,m));
+  }
+  
   return nullptr;
 }
 
@@ -72,4 +107,12 @@ void EntityCreator::visit(PositionComponent& comp){
 
 void EntityCreator::visit(HealthComponent& comp){
   mCompStorer.addComponent(tmpId, std::make_shared<HealthComponent>(comp));
+}
+
+void EntityCreator::visit(AttackComponent& comp){
+  mCompStorer.addComponent(tmpId, std::make_shared<AttackComponent>(comp));
+}
+
+void EntityCreator::visit(ArmorComponent& comp){
+  mCompStorer.addComponent(tmpId, std::make_shared<ArmorComponent>(comp));
 }
