@@ -46,7 +46,6 @@ std::vector<std::pair<std::string, std::string>> GenericServer::receivePackets()
 	char buffer[MAX_NET_BUFFER_LENGTH];
 	size_t length;
 	sf::Socket::Status status;
-	std::vector<std::map<std::string, std::shared_ptr<ClientData>>::iterator> list;
 	std::vector<std::pair<std::string, std::string>> output;
 
 	for (auto it = clients.begin(); it != clients.end(); ++it)
@@ -57,7 +56,6 @@ std::vector<std::pair<std::string, std::string>> GenericServer::receivePackets()
 		{
 		case sf::Socket::Done:
 			message = buffer;
-			//std::cout << it->first << ": " << message << "\n";
 			if (message.length() > 0)
 			{
 				action(it->first, message);
@@ -73,7 +71,7 @@ std::vector<std::pair<std::string, std::string>> GenericServer::receivePackets()
 			break;
 		case sf::Socket::Disconnected:
 			std::cout << it->first << " has been disconnected\n";
-			list.push_back(it);
+			deadList.push_back(it);
 			break;
 
 		default:
@@ -81,10 +79,7 @@ std::vector<std::pair<std::string, std::string>> GenericServer::receivePackets()
 		}
 	}
 
-	for (auto i = 0; i < (int)list.size(); i++)
-	{
-		clients.erase(list[i]);
-	}
+	wipeDeadList();
 
 	return output;
 }
@@ -141,6 +136,24 @@ void GenericServer::reregister(std::string oldId, std::string oldKey, std::strin
 
 void GenericServer::login(std::string id, std::string key)
 {
+}
+
+void GenericServer::wipeDeadList()
+{
+	for (const auto &i : deadList)
+	{
+		clients.erase(i);
+	}
+}
+
+void GenericServer::addToDeadList(std::string id)
+{
+	deadList.push_back(find(id));
+}
+
+const std::map<std::string, std::shared_ptr<ClientData>>::iterator GenericServer::find(std::string id)
+{
+	return std::find_if(clients.begin(), clients.end(), [id](std::pair<std::string, std::shared_ptr<ClientData>> a) { return a.first == id; });
 }
 
 std::string GenericServer::alphaNumericGeneration(std::string::size_type length)

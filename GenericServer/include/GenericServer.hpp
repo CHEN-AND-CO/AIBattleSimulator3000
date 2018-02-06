@@ -26,6 +26,7 @@ class GenericServer
 	bool isAlive() const { return alive; }
 	void toggleAlive() { alive = !alive; }
 	void setAlive(bool parm) { alive = parm; }
+	const auto &getDeadList() const { return deadList; }
 
 	void send(const std::string id, const std::string &msg);
 	std::vector<std::pair<std::string, std::string>> receive();
@@ -36,6 +37,10 @@ class GenericServer
 	void reregister(std::string oldId, std::string oldKey, std::string id, std::string key);
 	void login(std::string id, std::string key);
 
+	void wipeDeadList();
+	void addToDeadList(std::string id);
+	const std::map<std::string, std::shared_ptr<ClientData>>::iterator find(std::string id);
+
 	std::string alphaNumericGeneration(std::string::size_type length);
 
   private:
@@ -44,6 +49,7 @@ class GenericServer
 
 	bool alive;
 	std::string message;
+	std::vector<std::map<std::string, std::shared_ptr<ClientData>>::iterator> deadList;
 
 	std::string server_id = "SERVER";
 };

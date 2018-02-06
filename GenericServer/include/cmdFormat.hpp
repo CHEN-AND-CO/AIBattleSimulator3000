@@ -5,21 +5,22 @@
 #include <string>
 #include <vector>
 
-namespace cmdFormat {
-	struct cmdFormat {
-		std::string id, command;
-		std::vector<std::string> args;
-		unsigned int arglen;
-		bool valid;
-	};
+namespace cmdFormat
+{
+struct cmdFormat
+{
+	std::string id, command;
+	std::vector<std::string> args;
+	unsigned int arglen;
+	bool valid;
+};
 
-	cmdFormat parseCommand(std::string entry);
-	void printCommand(cmdFormat cmd);
-	void clearCommand(cmdFormat& cmd);
-	std::vector<std::string> split(const std::string& in, const char& token);
+cmdFormat parseCommand(std::string entry);
+void printCommand(cmdFormat cmd);
+void clearCommand(cmdFormat &cmd);
+std::vector<std::string> split(const std::string &in, const char &token);
 }
 
 static const unsigned int MAX_NET_BUFFER_LENGTH = 65536;
 
 #endif /* CMDFORMAT_HPP */
-
