@@ -8,7 +8,6 @@
  *\brief Ici est declare la class EntityCreator 
  */
 
-
 #include "ComponentStorer.hpp"
 #include "EntityManager.hpp"
 #include "LuaScript.hpp"
@@ -32,48 +31,81 @@ public:
   /**
    *\brief Constructor
    *
-   *\para compStorer: le stockage des composants
-   *\para entManager: le gestionnaire des entites
-   *\para scriptPath: le chemin vers le fichier lua contenant les templates des entites
+   *\param compStorer: le stockage des composants
+   *\param entManager: le gestionnaire des entites
+   *\param scriptPath: le chemin vers le fichier lua contenant les templates des entites
    */
   EntityCreator(ComponentStorer& compS,
 		EntityManager& entM,
 		const std::string& scriptPath);
 
   /**
-   *\brief addEntity
-   *
    *Cette fonction ajoute une entite dans le gestionnaire et les composant dans le stockage
    *a partir d'un template
    *
-   *\para entName: le nom de l'entite a creer
+   *\param entName: le nom de l'entite a creer
    *\return l'id de l'entite creer, -1 si erreur
    */
   int addEntity(const std::string& entName);
 
   /**
-   *\brief visit
+   *Permet aux composants de visiter la classe
    *
-   *Permet aux composant de visiter la classe
-   *
-   *\para comp: le composant
+   *\param comp: le composant
    */
   void visit(PositionComponent&);
+  /**
+   *Permet aux composants de visiter la classe
+   *
+   *\param comp: le composant
+   */
+  
   void visit(HealthComponent&);
+  
+  /**
+   *Permet aux composants de visiter la classe
+   *
+   *\param comp: le composant
+   */
   void visit(AttackComponent&);
+  
+  /**
+   *Permet aux composants de visiter la classe
+   *
+   *\param comp: le composant
+   */
   void visit(ArmorComponent&);
+  
+  /**
+   *Permet aux composants de visiter la classe
+   *
+   *\param comp: le composant
+   */
   void visit(SpeedComponent&);
   
 private:
+  /**
+   *\brief createTemplate
+   *
+   *creer des templates de toutes les unites
+   */
   void createTemplate();
+
+  /**
+   *\brief createComposant
+   *
+   *Creer un composant a partir de son nom et des parametres de construction recuperer de lua
+   *
+   *\param compName: le nom du composant
+   *\param parametres: un table de reference luaBridge contenant les parametres de construction
+   */
   std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& parametres);
+
+  std::map<std::string, std::vector<std::shared_ptr<Component>>> mEntitiesTemplate;  
   int tmpId;
-  
   LuaScript mLua;
-  
   ComponentStorer& mCompStorer;
   EntityManager& mEntManager;
-  std::map<std::string, std::vector<std::shared_ptr<Component>>> mEntitiesTemplate;
 };
 
 #endif

@@ -1,6 +1,13 @@
 #ifndef COMPONENT_HPP
 #define COMPONENT_HPP
 
+/**
+ *\file Component.hpp
+ *\author PapyRedstone
+ *\version 1.0
+ *\brief Ici sont declares les class Visitor, Component et les class filles de component 
+ */
+
 #include "Define.hpp"
 
 #include <SFML/Graphics.hpp>
@@ -10,29 +17,76 @@
 //Needed for the creation of the components
 class Visitor;
 
+/**
+ *\struct Component
+ *
+ *\brief Classe de base pour les composant
+ *
+ *une classe de base pour les composant
+ */
 struct Component{
+  /**
+   *Fonction acceptant un visiteur
+   *
+   *\param V: le visiteur qui va etre accepter
+   */
   virtual void accept(Visitor& v)=0;
 };
 
+/**
+ *\struct PositionComponent
+ *
+ *Composant définissant la position d'une entite
+ */
 struct PositionComponent: public Component{
+  /**
+   *\brief Constructeur
+   */
   PositionComponent(Position p):position{p}{}
-  Position position;
-  
+  Position position;/*!<la position de l'entité*/
+
+  /**
+   *Fonction acceptant un visiteur
+   *
+   *\param V: le visiteur qui va etre accepter
+   */
   virtual void accept(Visitor& v);
 };
 
+/**
+ *\struct HealthComponent
+ *
+ *Composant définissant la vie d'une entité
+ */
 struct HealthComponent: public Component{
+  /**
+   *\brief Constructeur
+   */
   HealthComponent(int h):health{h}{}
-  int health;
+  int health;/*!<* la vie de l'entite/
 
+  /**
+   *Fonction acceptant un visiteur
+   *
+   *\param V: le visiteur qui va etre accepter
+   */
   virtual void accept(Visitor& v);
 };
 
+/**
+ *\struct SpeedComponent
+ *
+ */
 struct SpeedComponent: public Component{
   SpeedComponent(int s):speed{s}{}
 
   int speed;
 
+  /**
+   *Fonction acceptant un visiteur
+   *
+   *\param V: le visiteur qui va etre accepter
+   */
   virtual void accept(Visitor& v);
 };
 
@@ -47,6 +101,11 @@ struct AttackComponent: public Component{
   DommageType::Type dommageType;
   AttackType::Type attackType;
 
+  /**
+   *Fonction acceptant un visiteur
+   *
+   *\param V: le visiteur qui va etre accepter
+   */
   virtual void accept(Visitor& v);
 };
 
@@ -62,6 +121,11 @@ struct ArmorComponent: public Component{
   int shockArmor;
   int magicArmor;
 
+  /**
+   *Fonction acceptant un visiteur
+   *
+   *\param V: le visiteur qui va etre accepter
+   */
   virtual void accept(Visitor& v);
 };
 

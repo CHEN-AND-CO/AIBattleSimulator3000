@@ -1,0 +1,171 @@
+\hypertarget{classEntityCreator}{}\section{Référence de la classe Entity\+Creator}
+\label{classEntityCreator}\index{Entity\+Creator@{Entity\+Creator}}
+
+
+Cette classe a pour but de creer les entites sur demande.  
+
+
+
+
+{\ttfamily \#include $<$Entity\+Creator.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Entity\+Creator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEntityCreator}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEntityCreator_acf61fa9cbe29e50bff8a60620e01a3f2}{Entity\+Creator} (\hyperlink{classComponentStorer}{Component\+Storer} \&compS, \hyperlink{classEntityManager}{Entity\+Manager} \&entM, const std\+::string \&script\+Path)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classEntityCreator_a55f031e5e1ea0afc99375bcb0c2ace94}{add\+Entity} (const std\+::string \&ent\+Name)
+\item 
+void \hyperlink{classEntityCreator_ae6e6fa03f354303f33714c875bda0c62}{visit} (\hyperlink{structPositionComponent}{Position\+Component} \&)
+\item 
+void \hyperlink{classEntityCreator_aaa96ee2442660da23e34a1f0cec3fa47}{visit} (\hyperlink{structHealthComponent}{Health\+Component} \&)
+\item 
+void \hyperlink{classEntityCreator_a48a6a070dee113ccf56916c0077845c1}{visit} (\hyperlink{structAttackComponent}{Attack\+Component} \&)
+\item 
+void \hyperlink{classEntityCreator_af23e7656c8ee20319bd890aad99a6996}{visit} (\hyperlink{structArmorComponent}{Armor\+Component} \&)
+\item 
+void \hyperlink{classEntityCreator_aee1042f0ec1dc1310ab4c0096d09e094}{visit} (\hyperlink{structSpeedComponent}{Speed\+Component} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe a pour but de creer les entites sur demande. 
+
+La classe va charger et stocker des templates de chaque entites et va les copier dans \hyperlink{classComponentStorer}{Component\+Storer} quand on creer l\textquotesingle{}objet 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classEntityCreator_acf61fa9cbe29e50bff8a60620e01a3f2}\label{classEntityCreator_acf61fa9cbe29e50bff8a60620e01a3f2}} 
+\index{Entity\+Creator@{Entity\+Creator}!Entity\+Creator@{Entity\+Creator}}
+\index{Entity\+Creator@{Entity\+Creator}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{Entity\+Creator()}{EntityCreator()}}
+{\footnotesize\ttfamily Entity\+Creator\+::\+Entity\+Creator (\begin{DoxyParamCaption}\item[{\hyperlink{classComponentStorer}{Component\+Storer} \&}]{compS,  }\item[{\hyperlink{classEntityManager}{Entity\+Manager} \&}]{entM,  }\item[{const std\+::string \&}]{script\+Path }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em comp\+Storer} & le stockage des composants \\
+\hline
+{\em ent\+Manager} & le gestionnaire des entites \\
+\hline
+{\em script\+Path} & le chemin vers le fichier lua contenant les templates des entites \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classEntityCreator_a55f031e5e1ea0afc99375bcb0c2ace94}\label{classEntityCreator_a55f031e5e1ea0afc99375bcb0c2ace94}} 
+\index{Entity\+Creator@{Entity\+Creator}!add\+Entity@{add\+Entity}}
+\index{add\+Entity@{add\+Entity}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{add\+Entity()}{addEntity()}}
+{\footnotesize\ttfamily int Entity\+Creator\+::add\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ent\+Name }\end{DoxyParamCaption})}
+
+Cette fonction ajoute une entite dans le gestionnaire et les composant dans le stockage a partir d\textquotesingle{}un template
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ent\+Name} & le nom de l\textquotesingle{}entite a creer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}id de l\textquotesingle{}entite creer, -\/1 si erreur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntityCreator_ae6e6fa03f354303f33714c875bda0c62}\label{classEntityCreator_ae6e6fa03f354303f33714c875bda0c62}} 
+\index{Entity\+Creator@{Entity\+Creator}!visit@{visit}}
+\index{visit@{visit}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void Entity\+Creator\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structPositionComponent}{Position\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Permet aux composants de visiter la classe
+
+
+\begin{DoxyParams}{Paramètres}
+{\em comp} & le composant \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \hyperlink{classVisitor_afc865e84cb1293284e6f524a00049b11}{Visitor}.
+
+\mbox{\Hypertarget{classEntityCreator_aaa96ee2442660da23e34a1f0cec3fa47}\label{classEntityCreator_aaa96ee2442660da23e34a1f0cec3fa47}} 
+\index{Entity\+Creator@{Entity\+Creator}!visit@{visit}}
+\index{visit@{visit}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void Entity\+Creator\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structHealthComponent}{Health\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Permet aux composants de visiter la classe
+
+
+\begin{DoxyParams}{Paramètres}
+{\em comp} & le composant \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \hyperlink{classVisitor_aba8f1cab6bd85c2b86ed0b8103d30f45}{Visitor}.
+
+\mbox{\Hypertarget{classEntityCreator_a48a6a070dee113ccf56916c0077845c1}\label{classEntityCreator_a48a6a070dee113ccf56916c0077845c1}} 
+\index{Entity\+Creator@{Entity\+Creator}!visit@{visit}}
+\index{visit@{visit}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void Entity\+Creator\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structAttackComponent}{Attack\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Permet aux composants de visiter la classe
+
+
+\begin{DoxyParams}{Paramètres}
+{\em comp} & le composant \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \hyperlink{classVisitor_a6bcc6c971d8ba324024e3cf8e06e3751}{Visitor}.
+
+\mbox{\Hypertarget{classEntityCreator_af23e7656c8ee20319bd890aad99a6996}\label{classEntityCreator_af23e7656c8ee20319bd890aad99a6996}} 
+\index{Entity\+Creator@{Entity\+Creator}!visit@{visit}}
+\index{visit@{visit}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void Entity\+Creator\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structArmorComponent}{Armor\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Permet aux composants de visiter la classe
+
+
+\begin{DoxyParams}{Paramètres}
+{\em comp} & le composant \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \hyperlink{classVisitor_a05ce14929a5c30d182b46f8843605468}{Visitor}.
+
+\mbox{\Hypertarget{classEntityCreator_aee1042f0ec1dc1310ab4c0096d09e094}\label{classEntityCreator_aee1042f0ec1dc1310ab4c0096d09e094}} 
+\index{Entity\+Creator@{Entity\+Creator}!visit@{visit}}
+\index{visit@{visit}!Entity\+Creator@{Entity\+Creator}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void Entity\+Creator\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedComponent}{Speed\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Permet aux composants de visiter la classe
+
+
+\begin{DoxyParams}{Paramètres}
+{\em comp} & le composant \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \hyperlink{classVisitor_a42ce8ce5e7c789dc4b919a088e68829b}{Visitor}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{EntityCreator_8hpp}{Entity\+Creator.\+hpp}\item 
+src/\hyperlink{EntityCreator_8cpp}{Entity\+Creator.\+cpp}\end{DoxyCompactItemize}

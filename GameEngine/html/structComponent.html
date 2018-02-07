@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AIBAttleSimulator3000: Référence de la structure Component</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AIBAttleSimulator3000
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="structComponent-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure Component<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Classe de base pour les composant.  
+ <a href="structComponent.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Component_8hpp_source.html">Component.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de Component:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structComponent.png" usemap="#Component_map" alt=""/>
+  <map id="Component_map" name="Component_map">
+<area href="structArmorComponent.html" alt="ArmorComponent" shape="rect" coords="0,56,119,80"/>
+<area href="structAttackComponent.html" alt="AttackComponent" shape="rect" coords="129,56,248,80"/>
+<area href="structHealthComponent.html" alt="HealthComponent" shape="rect" coords="258,56,377,80"/>
+<area href="structPositionComponent.html" alt="PositionComponent" shape="rect" coords="387,56,506,80"/>
+<area href="structSpeedComponent.html" alt="SpeedComponent" shape="rect" coords="516,56,635,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a1d42068fda4a9bf6571810f669b3bb21"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structComponent.html#a1d42068fda4a9bf6571810f669b3bb21">accept</a> (<a class="el" href="classVisitor.html">Visitor</a> &amp;v)=0</td></tr>
+<tr class="separator:a1d42068fda4a9bf6571810f669b3bb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Classe de base pour les composant. </p>
+<p>une classe de base pour les composant </p>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a1d42068fda4a9bf6571810f669b3bb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d42068fda4a9bf6571810f669b3bb21">&#9670;&nbsp;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::accept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVisitor.html">Visitor</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fonction acceptant un visiteur</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">V</td><td>le visiteur qui va etre accepter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="structArmorComponent.html#aac5863d4195fe056fbb0a2a0af17b6e0">ArmorComponent</a>, <a class="el" href="structAttackComponent.html#a6644fff9ad3be5bc7cd9571f811fe25e">AttackComponent</a>, <a class="el" href="structSpeedComponent.html#a6857d2108ab631e63a9040bf77a8b366">SpeedComponent</a>, <a class="el" href="structHealthComponent.html#a47bb95e02765b03a387366b866046860">HealthComponent</a>, et <a class="el" href="structPositionComponent.html#a7f5ef56cf9e5722c7df9fdfa66fdf425">PositionComponent</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+<li>include/<a class="el" href="Component_8hpp_source.html">Component.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

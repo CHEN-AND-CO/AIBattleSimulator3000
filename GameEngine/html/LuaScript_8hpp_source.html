@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AIBAttleSimulator3000:  Fichier source de include/LuaScript.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AIBAttleSimulator3000
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LuaScript.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="LuaScript_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LUA_SCRIPT_HPP</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LUA_SCRIPT_HPP</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;lua.hpp&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;LuaBridge/LuaBridge.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classLuaScript.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLuaScript.html">LuaScript</a>{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="comment">//Constructor and Destructor</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classLuaScript.html#afc0b4a31427c3c78a8529cf3cf6b729e">LuaScript</a>(<span class="keyword">const</span> std::string&amp; scriptName);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classLuaScript.html#a5660ae45ebd4b7a621ae21a2ed0e784b">~LuaScript</a>();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//Use for getting a var by it&#39;s name</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  luabridge::LuaRef <span class="keyword">get</span>(<span class="keyword">const</span> std::string&amp; varName);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  std::unordered_map&lt;std::string, luabridge::LuaRef&gt; <a class="code" href="classLuaScript.html#a05bcad381dac15ea1b5399045651497d">getKeyValueMap</a>(<span class="keyword">const</span> luabridge::LuaRef&amp; table);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  </div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//The lua state we are using</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  lua_State* mLua;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};<span class="comment">//class LuaScript</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classLuaScript_html_afc0b4a31427c3c78a8529cf3cf6b729e"><div class="ttname"><a href="classLuaScript.html#afc0b4a31427c3c78a8529cf3cf6b729e">LuaScript::LuaScript</a></div><div class="ttdeci">LuaScript(const std::string &amp;scriptName)</div><div class="ttdef"><b>Definition:</b> LuaScript.cpp:3</div></div>
+<div class="ttc" id="classLuaScript_html_a5660ae45ebd4b7a621ae21a2ed0e784b"><div class="ttname"><a href="classLuaScript.html#a5660ae45ebd4b7a621ae21a2ed0e784b">LuaScript::~LuaScript</a></div><div class="ttdeci">~LuaScript()</div><div class="ttdef"><b>Definition:</b> LuaScript.cpp:11</div></div>
+<div class="ttc" id="classLuaScript_html_a05bcad381dac15ea1b5399045651497d"><div class="ttname"><a href="classLuaScript.html#a05bcad381dac15ea1b5399045651497d">LuaScript::getKeyValueMap</a></div><div class="ttdeci">std::unordered_map&lt; std::string, luabridge::LuaRef &gt; getKeyValueMap(const luabridge::LuaRef &amp;table)</div><div class="ttdef"><b>Definition:</b> LuaScript.cpp:21</div></div>
+<div class="ttc" id="classLuaScript_html"><div class="ttname"><a href="classLuaScript.html">LuaScript</a></div><div class="ttdef"><b>Definition:</b> LuaScript.hpp:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

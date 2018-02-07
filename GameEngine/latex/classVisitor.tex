@@ -1,0 +1,94 @@
+\hypertarget{classVisitor}{}\section{Référence de la classe Visitor}
+\label{classVisitor}\index{Visitor@{Visitor}}
+
+
+{\ttfamily \#include $<$Component.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVisitor}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classVisitor_a02ffa1442ae77b4dbc1dc362be511dc5}{$\sim$\+Visitor} ()=0
+\item 
+virtual void \hyperlink{classVisitor_afc865e84cb1293284e6f524a00049b11}{visit} (\hyperlink{structPositionComponent}{Position\+Component} \&comp)
+\item 
+virtual void \hyperlink{classVisitor_aba8f1cab6bd85c2b86ed0b8103d30f45}{visit} (\hyperlink{structHealthComponent}{Health\+Component} \&comp)
+\item 
+virtual void \hyperlink{classVisitor_a6bcc6c971d8ba324024e3cf8e06e3751}{visit} (\hyperlink{structAttackComponent}{Attack\+Component} \&comp)
+\item 
+virtual void \hyperlink{classVisitor_a05ce14929a5c30d182b46f8843605468}{visit} (\hyperlink{structArmorComponent}{Armor\+Component} \&comp)
+\item 
+virtual void \hyperlink{classVisitor_a42ce8ce5e7c789dc4b919a088e68829b}{visit} (\hyperlink{structSpeedComponent}{Speed\+Component} \&comp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classVisitor_a02ffa1442ae77b4dbc1dc362be511dc5}\label{classVisitor_a02ffa1442ae77b4dbc1dc362be511dc5}} 
+\index{Visitor@{Visitor}!````~Visitor@{$\sim$\+Visitor}}
+\index{````~Visitor@{$\sim$\+Visitor}!Visitor@{Visitor}}
+\subsubsection{\texorpdfstring{$\sim$\+Visitor()}{~Visitor()}}
+{\footnotesize\ttfamily Visitor\+::$\sim$\+Visitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [pure virtual]}}
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classVisitor_afc865e84cb1293284e6f524a00049b11}\label{classVisitor_afc865e84cb1293284e6f524a00049b11}} 
+\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structPositionComponent}{Position\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentée dans \hyperlink{classEntityCreator_ae6e6fa03f354303f33714c875bda0c62}{Entity\+Creator}, et \hyperlink{classMoveSystem_a816baaf8d8d9db45b4c026902946bc1e}{Move\+System}.
+
+\mbox{\Hypertarget{classVisitor_aba8f1cab6bd85c2b86ed0b8103d30f45}\label{classVisitor_aba8f1cab6bd85c2b86ed0b8103d30f45}} 
+\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structHealthComponent}{Health\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentée dans \hyperlink{classEntityCreator_aaa96ee2442660da23e34a1f0cec3fa47}{Entity\+Creator}.
+
+\mbox{\Hypertarget{classVisitor_a6bcc6c971d8ba324024e3cf8e06e3751}\label{classVisitor_a6bcc6c971d8ba324024e3cf8e06e3751}} 
+\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structAttackComponent}{Attack\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentée dans \hyperlink{classEntityCreator_a48a6a070dee113ccf56916c0077845c1}{Entity\+Creator}.
+
+\mbox{\Hypertarget{classVisitor_a05ce14929a5c30d182b46f8843605468}\label{classVisitor_a05ce14929a5c30d182b46f8843605468}} 
+\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structArmorComponent}{Armor\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentée dans \hyperlink{classEntityCreator_af23e7656c8ee20319bd890aad99a6996}{Entity\+Creator}.
+
+\mbox{\Hypertarget{classVisitor_a42ce8ce5e7c789dc4b919a088e68829b}\label{classVisitor_a42ce8ce5e7c789dc4b919a088e68829b}} 
+\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedComponent}{Speed\+Component} \&}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentée dans \hyperlink{classEntityCreator_aee1042f0ec1dc1310ab4c0096d09e094}{Entity\+Creator}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Component_8hpp}{Component.\+hpp}\end{DoxyCompactItemize}

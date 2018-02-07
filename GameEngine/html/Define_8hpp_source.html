@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AIBAttleSimulator3000:  Fichier source de include/Define.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AIBAttleSimulator3000
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Define.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Define_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEFINE_HPP</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEFINE_HPP</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceDommageType.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceDommageType.html">DommageType</a>{</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfd">    7</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfd">Type</a> {<a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdabca33f1e8d86b9faddd26010eb172ec0">Pierce</a>, <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdad7195516d2e659e73c0f22e64249517b">Shock</a>, <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdab12cf1b0c6c2cd00d9466c6cab208137">Magic</a>, <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfda11352066c669cc04a816c1fbc404eb5f">NONE</a>};</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespaceDommageType.html#a95378d0bf91b2850a1a5c112c35bb75c">    8</a></span>&#160;  <span class="keyword">const</span> std::array&lt;Type, 3&gt; <a class="code" href="namespaceDommageType.html#a95378d0bf91b2850a1a5c112c35bb75c">All</a> = {<a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdad7195516d2e659e73c0f22e64249517b">Shock</a>, <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdabca33f1e8d86b9faddd26010eb172ec0">Pierce</a>, <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdab12cf1b0c6c2cd00d9466c6cab208137">Magic</a>};</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespaceAttackType.html">   11</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceAttackType.html">AttackType</a>{</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302">   12</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302">Type</a> {<a class="code" href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302a53add169c04afbf920774a3cdf710106">Melee</a>, <a class="code" href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302a3a9ed6c6d45ca13d8df01c12f7d538fd">Distance</a>, <a class="code" href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfda11352066c669cc04a816c1fbc404eb5f">NONE</a>};</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespaceAttackType.html#a44c88a70d0a57861180381c34bda18e9">   13</a></span>&#160;  <span class="keyword">const</span> std::array&lt;Type, 2&gt; <a class="code" href="namespaceDommageType.html#a95378d0bf91b2850a1a5c112c35bb75c">All</a> = {<a class="code" href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302a53add169c04afbf920774a3cdf710106">Melee</a>, <a class="code" href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302a3a9ed6c6d45ca13d8df01c12f7d538fd">Distance</a>};</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceDirection.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceDirection.html">Direction</a>{</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418">   17</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418">Dir</a>{</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a2dcf8e71283b05e59e3b7d1fa4228623">   18</a></span>&#160;    <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a2dcf8e71283b05e59e3b7d1fa4228623">Up</a>,</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aad5dbfe9b746123d7af7381b52a183f1">   19</a></span>&#160;    <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aad5dbfe9b746123d7af7381b52a183f1">Down</a>,</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aa6314d583c5d1432de99eb3fda30bdea">   20</a></span>&#160;    <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aa6314d583c5d1432de99eb3fda30bdea">Left</a>,</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1d010c1da83b45aa3ded2cb937d2d979">   21</a></span>&#160;    <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1d010c1da83b45aa3ded2cb937d2d979">Right</a>,</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1f9c924b3a1502e5e35ed148994c4148">   22</a></span>&#160;    <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1f9c924b3a1502e5e35ed148994c4148">None</a></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  };</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceDirection.html#aabd5fd5d609f7dda7f8f50f1dbd563a7">   25</a></span>&#160;  <span class="keyword">const</span> std::array&lt;Dir, 4&gt; <a class="code" href="namespaceDommageType.html#a95378d0bf91b2850a1a5c112c35bb75c">All</a> = {<a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a2dcf8e71283b05e59e3b7d1fa4228623">Up</a>, <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aad5dbfe9b746123d7af7381b52a183f1">Down</a>, <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aa6314d583c5d1432de99eb3fda30bdea">Left</a>, <a class="code" href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1d010c1da83b45aa3ded2cb937d2d979">Right</a>};</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structPosition.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPosition.html">Position</a>{</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">   29</a></span>&#160;  <span class="keywordtype">int</span> x,<a class="code" href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">y</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="structPosition.html">Position</a>&amp; operator+=(<span class="keyword">const</span> <a class="code" href="structPosition.html">Position</a>&amp; r);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="structPosition.html">Position</a>&amp; operator*=(<span class="keywordtype">int</span> d);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="structPosition.html">Position</a>&amp; operator++();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="structPosition.html">Position</a> operator++(<span class="keywordtype">int</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Define_8hpp.html#a1b4ef906d1f4cbcc1acbdf35518b6081">operator==</a>(<span class="keyword">const</span> <a class="code" href="structPosition.html">Position</a>&amp; l, <span class="keyword">const</span> <a class="code" href="structPosition.html">Position</a>&amp; r);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="structPosition.html">Position</a> <a class="code" href="Define_8hpp.html#aebe6095cc1b978b08daff33822be6e8e">operator+</a>(<span class="keyword">const</span> <a class="code" href="structPosition.html">Position</a>&amp; l, <span class="keyword">const</span> <a class="code" href="structPosition.html">Position</a>&amp; r);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="structPosition.html">Position</a> <a class="code" href="Define_8hpp.html#ab14a51b3479d56b3901395ee1d9ec36d">operator*</a>(<span class="keyword">const</span> <a class="code" href="structPosition.html">Position</a>&amp; l, <span class="keywordtype">int</span> d);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="namespaceAttackType_html_a26a2d73c5f73a06a63a568dcd519d302a3a9ed6c6d45ca13d8df01c12f7d538fd"><div class="ttname"><a href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302a3a9ed6c6d45ca13d8df01c12f7d538fd">AttackType::Distance</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:12</div></div>
+<div class="ttc" id="namespaceDommageType_html_a95378d0bf91b2850a1a5c112c35bb75c"><div class="ttname"><a href="namespaceDommageType.html#a95378d0bf91b2850a1a5c112c35bb75c">DommageType::All</a></div><div class="ttdeci">const std::array&lt; Type, 3 &gt; All</div><div class="ttdef"><b>Definition:</b> Define.hpp:8</div></div>
+<div class="ttc" id="namespaceDommageType_html"><div class="ttname"><a href="namespaceDommageType.html">DommageType</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:6</div></div>
+<div class="ttc" id="namespaceDirection_html_aaa56ca1cc2883e1cab31b6cbb5054418a2dcf8e71283b05e59e3b7d1fa4228623"><div class="ttname"><a href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a2dcf8e71283b05e59e3b7d1fa4228623">Direction::Up</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:18</div></div>
+<div class="ttc" id="namespaceDirection_html_aaa56ca1cc2883e1cab31b6cbb5054418aad5dbfe9b746123d7af7381b52a183f1"><div class="ttname"><a href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aad5dbfe9b746123d7af7381b52a183f1">Direction::Down</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:19</div></div>
+<div class="ttc" id="structPosition_html_a3c08e9213d4726b21caba3073192c4a3"><div class="ttname"><a href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">Position::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> Define.hpp:29</div></div>
+<div class="ttc" id="namespaceDirection_html_aaa56ca1cc2883e1cab31b6cbb5054418"><div class="ttname"><a href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418">Direction::Dir</a></div><div class="ttdeci">Dir</div><div class="ttdef"><b>Definition:</b> Define.hpp:17</div></div>
+<div class="ttc" id="namespaceAttackType_html"><div class="ttname"><a href="namespaceAttackType.html">AttackType</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:11</div></div>
+<div class="ttc" id="namespaceDommageType_html_a6e5dff665b7631fe6ec9065dddbebcfd"><div class="ttname"><a href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfd">DommageType::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Define.hpp:7</div></div>
+<div class="ttc" id="namespaceDommageType_html_a6e5dff665b7631fe6ec9065dddbebcfdabca33f1e8d86b9faddd26010eb172ec0"><div class="ttname"><a href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdabca33f1e8d86b9faddd26010eb172ec0">DommageType::Pierce</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:7</div></div>
+<div class="ttc" id="Define_8hpp_html_a1b4ef906d1f4cbcc1acbdf35518b6081"><div class="ttname"><a href="Define_8hpp.html#a1b4ef906d1f4cbcc1acbdf35518b6081">operator==</a></div><div class="ttdeci">bool operator==(const Position &amp;l, const Position &amp;r)</div><div class="ttdef"><b>Definition:</b> Define.cpp:3</div></div>
+<div class="ttc" id="namespaceDirection_html_aaa56ca1cc2883e1cab31b6cbb5054418a1f9c924b3a1502e5e35ed148994c4148"><div class="ttname"><a href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1f9c924b3a1502e5e35ed148994c4148">Direction::None</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:22</div></div>
+<div class="ttc" id="namespaceDirection_html_aaa56ca1cc2883e1cab31b6cbb5054418a1d010c1da83b45aa3ded2cb937d2d979"><div class="ttname"><a href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418a1d010c1da83b45aa3ded2cb937d2d979">Direction::Right</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:21</div></div>
+<div class="ttc" id="namespaceDirection_html_aaa56ca1cc2883e1cab31b6cbb5054418aa6314d583c5d1432de99eb3fda30bdea"><div class="ttname"><a href="namespaceDirection.html#aaa56ca1cc2883e1cab31b6cbb5054418aa6314d583c5d1432de99eb3fda30bdea">Direction::Left</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:20</div></div>
+<div class="ttc" id="Define_8hpp_html_aebe6095cc1b978b08daff33822be6e8e"><div class="ttname"><a href="Define_8hpp.html#aebe6095cc1b978b08daff33822be6e8e">operator+</a></div><div class="ttdeci">Position operator+(const Position &amp;l, const Position &amp;r)</div><div class="ttdef"><b>Definition:</b> Define.cpp:7</div></div>
+<div class="ttc" id="namespaceDirection_html"><div class="ttname"><a href="namespaceDirection.html">Direction</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:16</div></div>
+<div class="ttc" id="namespaceAttackType_html_a26a2d73c5f73a06a63a568dcd519d302"><div class="ttname"><a href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302">AttackType::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Define.hpp:12</div></div>
+<div class="ttc" id="namespaceDommageType_html_a6e5dff665b7631fe6ec9065dddbebcfdad7195516d2e659e73c0f22e64249517b"><div class="ttname"><a href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdad7195516d2e659e73c0f22e64249517b">DommageType::Shock</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:7</div></div>
+<div class="ttc" id="structPosition_html"><div class="ttname"><a href="structPosition.html">Position</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:28</div></div>
+<div class="ttc" id="namespaceDommageType_html_a6e5dff665b7631fe6ec9065dddbebcfdab12cf1b0c6c2cd00d9466c6cab208137"><div class="ttname"><a href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfdab12cf1b0c6c2cd00d9466c6cab208137">DommageType::Magic</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:7</div></div>
+<div class="ttc" id="namespaceDommageType_html_a6e5dff665b7631fe6ec9065dddbebcfda11352066c669cc04a816c1fbc404eb5f"><div class="ttname"><a href="namespaceDommageType.html#a6e5dff665b7631fe6ec9065dddbebcfda11352066c669cc04a816c1fbc404eb5f">DommageType::NONE</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:7</div></div>
+<div class="ttc" id="namespaceAttackType_html_a26a2d73c5f73a06a63a568dcd519d302a53add169c04afbf920774a3cdf710106"><div class="ttname"><a href="namespaceAttackType.html#a26a2d73c5f73a06a63a568dcd519d302a53add169c04afbf920774a3cdf710106">AttackType::Melee</a></div><div class="ttdef"><b>Definition:</b> Define.hpp:12</div></div>
+<div class="ttc" id="Define_8hpp_html_ab14a51b3479d56b3901395ee1d9ec36d"><div class="ttname"><a href="Define_8hpp.html#ab14a51b3479d56b3901395ee1d9ec36d">operator*</a></div><div class="ttdeci">Position operator*(const Position &amp;l, int d)</div><div class="ttdef"><b>Definition:</b> Define.cpp:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
