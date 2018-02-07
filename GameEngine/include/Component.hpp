@@ -76,11 +76,14 @@ struct HealthComponent: public Component{
 /**
  *\struct SpeedComponent
  *
+ *\brief Composant definissant la vitesse de l'entite
  */
 struct SpeedComponent: public Component{
+  /**
+   *\brief Constructeur
+   */
   SpeedComponent(int s):speed{s}{}
-
-  int speed;
+  int speed;/*!<La vitesse de l'entite*/
 
   /**
    *Fonction acceptant un visiteur
@@ -90,16 +93,24 @@ struct SpeedComponent: public Component{
   virtual void accept(Visitor& v);
 };
 
+/**
+ *\struct AttackComponent
+ *
+ *\brief Definit le type et la puissance des degats et le type d'attaque de l'entite
+ */
 struct AttackComponent: public Component{
+  /**
+   *\brief Constructeur
+   */
   AttackComponent(int a,
 		  DommageType::Type d,
 		  AttackType::Type at):amount{a},
 				       dommageType{d},
 				       attackType{at}
   {}
-  int amount;
-  DommageType::Type dommageType;
-  AttackType::Type attackType;
+  int amount;/*!<La puissance de l'entite*/
+  DommageType::Type dommageType;/*!<le type de dommage de l'entite*/
+  AttackType::Type attackType;/*!<le type d'attaque de l'entite*/
 
   /**
    *Fonction acceptant un visiteur
@@ -109,7 +120,15 @@ struct AttackComponent: public Component{
   virtual void accept(Visitor& v);
 };
 
+/**
+ *\struct ArmorComponent
+ *
+ *\brief Definit l'armure par type de degats de l'entite
+ */
 struct ArmorComponent: public Component{
+  /**
+   *\brief Constructeur
+   */
   ArmorComponent(int p,
 		 int s,
 		 int m):pierceArmor{p},
@@ -117,9 +136,9 @@ struct ArmorComponent: public Component{
 			magicArmor{m}
   {}
   
-  int pierceArmor;
-  int shockArmor;
-  int magicArmor;
+  int pierceArmor;/*!<L'armure de penetration*/
+  int shockArmor;/*!<l'armure de choc*/
+  int magicArmor;/*!<l'armure magique*/
 
   /**
    *Fonction acceptant un visiteur
