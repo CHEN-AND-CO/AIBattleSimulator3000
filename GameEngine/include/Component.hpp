@@ -36,7 +36,7 @@ struct Component{
 /**
  *\struct PositionComponent
  *
- *Composant définissant la position d'une entite
+ *\brief Composant définissant la position d'une entite
  */
 struct PositionComponent: public Component{
   /**
@@ -56,7 +56,7 @@ struct PositionComponent: public Component{
 /**
  *\struct HealthComponent
  *
- *Composant définissant la vie d'une entité
+ *\brief Composant définissant la vie d'une entité
  */
 struct HealthComponent: public Component{
   /**
