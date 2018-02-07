@@ -43,7 +43,7 @@ struct PositionComponent: public Component{
    *\brief Constructeur
    */
   PositionComponent(Position p):position{p}{}
-  Position position;/*!<la position de l'entité*/
+  Position position;/*!<la position de l'entite*/
 
   /**
    *Fonction acceptant un visiteur
@@ -63,7 +63,7 @@ struct HealthComponent: public Component{
    *\brief Constructeur
    */
   HealthComponent(int h):health{h}{}
-  int health;/*!<* la vie de l'entite/
+  int health;/*!<* la vie de l'entite*/
 
   /**
    *Fonction acceptant un visiteur
