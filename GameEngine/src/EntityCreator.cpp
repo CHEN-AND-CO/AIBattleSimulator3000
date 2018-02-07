@@ -24,7 +24,7 @@ void EntityCreator::createTemplate(){
   }
 }
 
-std::shared_ptr<Component> createComponent(const std::string& compName, luabridge::LuaRef& para){
+std::shared_ptr<Component> EntityCreator::createComponent(const std::string& compName, luabridge::LuaRef& para){
   assert(!para.isNil() && "Error: no parameters");
   assert(para.isTable() && "Error: parameters aren't a table");
   
