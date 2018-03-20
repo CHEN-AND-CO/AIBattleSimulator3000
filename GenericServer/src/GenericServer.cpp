@@ -10,6 +10,8 @@ GenericServer::GenericServer(const unsigned short port)
 
 void GenericServer::send(const std::string id, const std::string &msg)
 {
+    	if (msg.length() <= 0)
+		return;
 	auto tmp = clients[id];
 	if (!tmp)
 	{
