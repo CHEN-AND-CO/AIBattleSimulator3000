@@ -66,6 +66,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Abstraction pour l'utilisation des composants.  
+ <a href="classVisitor.html#details">Plus de détails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Component_8hpp_source.html">Component.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de Visitor:</div>
@@ -83,17 +86,24 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a02ffa1442ae77b4dbc1dc362be511dc5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVisitor.html#a02ffa1442ae77b4dbc1dc362be511dc5">~Visitor</a> ()=0</td></tr>
 <tr class="separator:a02ffa1442ae77b4dbc1dc362be511dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc865e84cb1293284e6f524a00049b11"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVisitor.html#afc865e84cb1293284e6f524a00049b11">visit</a> (<a class="el" href="structPositionComponent.html">PositionComponent</a> &amp;comp)</td></tr>
+<tr class="memdesc:afc865e84cb1293284e6f524a00049b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit le composant <a class="el" href="structPositionComponent.html" title="Composant définissant la position d&#39;une entite. ">PositionComponent</a>.  <a href="#afc865e84cb1293284e6f524a00049b11">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afc865e84cb1293284e6f524a00049b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba8f1cab6bd85c2b86ed0b8103d30f45"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVisitor.html#aba8f1cab6bd85c2b86ed0b8103d30f45">visit</a> (<a class="el" href="structHealthComponent.html">HealthComponent</a> &amp;comp)</td></tr>
+<tr class="memdesc:aba8f1cab6bd85c2b86ed0b8103d30f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit le composant <a class="el" href="structHealthComponent.html" title="Composant définissant la vie d&#39;une entité ">HealthComponent</a>.  <a href="#aba8f1cab6bd85c2b86ed0b8103d30f45">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aba8f1cab6bd85c2b86ed0b8103d30f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bcc6c971d8ba324024e3cf8e06e3751"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVisitor.html#a6bcc6c971d8ba324024e3cf8e06e3751">visit</a> (<a class="el" href="structAttackComponent.html">AttackComponent</a> &amp;comp)</td></tr>
+<tr class="memdesc:a6bcc6c971d8ba324024e3cf8e06e3751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit le composant <a class="el" href="structAttackComponent.html" title="Definit le type et la puissance des degats et le type d&#39;attaque de l&#39;entite. ">AttackComponent</a>.  <a href="#a6bcc6c971d8ba324024e3cf8e06e3751">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6bcc6c971d8ba324024e3cf8e06e3751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05ce14929a5c30d182b46f8843605468"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVisitor.html#a05ce14929a5c30d182b46f8843605468">visit</a> (<a class="el" href="structArmorComponent.html">ArmorComponent</a> &amp;comp)</td></tr>
+<tr class="memdesc:a05ce14929a5c30d182b46f8843605468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit le composant <a class="el" href="structArmorComponent.html" title="Definit l&#39;armure par type de degats de l&#39;entite. ">ArmorComponent</a>.  <a href="#a05ce14929a5c30d182b46f8843605468">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a05ce14929a5c30d182b46f8843605468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42ce8ce5e7c789dc4b919a088e68829b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVisitor.html#a42ce8ce5e7c789dc4b919a088e68829b">visit</a> (<a class="el" href="structSpeedComponent.html">SpeedComponent</a> &amp;comp)</td></tr>
+<tr class="memdesc:a42ce8ce5e7c789dc4b919a088e68829b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit le composant <a class="el" href="structSpeedComponent.html" title="Composant definissant la vitesse de l&#39;entite. ">SpeedComponent</a>.  <a href="#a42ce8ce5e7c789dc4b919a088e68829b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a42ce8ce5e7c789dc4b919a088e68829b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Abstraction pour l'utilisation des composants. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a02ffa1442ae77b4dbc1dc362be511dc5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02ffa1442ae77b4dbc1dc362be511dc5">&#9670;&nbsp;</a></span>~Visitor()</h2>
 
@@ -144,6 +154,14 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Visit le composant <a class="el" href="structPositionComponent.html" title="Composant définissant la position d&#39;une entite. ">PositionComponent</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>le composant a visiter </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Réimplémentée dans <a class="el" href="classEntityCreator.html#ae6e6fa03f354303f33714c875bda0c62">EntityCreator</a>, et <a class="el" href="classMoveSystem.html#a816baaf8d8d9db45b4c026902946bc1e">MoveSystem</a>.</p>
 
 </div>
@@ -171,6 +189,14 @@ Fonctions membres publiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Visit le composant <a class="el" href="structHealthComponent.html" title="Composant définissant la vie d&#39;une entité ">HealthComponent</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>le composant a visiter </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Réimplémentée dans <a class="el" href="classEntityCreator.html#aaa96ee2442660da23e34a1f0cec3fa47">EntityCreator</a>.</p>
 
@@ -200,6 +226,14 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Visit le composant <a class="el" href="structAttackComponent.html" title="Definit le type et la puissance des degats et le type d&#39;attaque de l&#39;entite. ">AttackComponent</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>le composant a visiter </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Réimplémentée dans <a class="el" href="classEntityCreator.html#a48a6a070dee113ccf56916c0077845c1">EntityCreator</a>.</p>
 
 </div>
@@ -228,6 +262,14 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Visit le composant <a class="el" href="structArmorComponent.html" title="Definit l&#39;armure par type de degats de l&#39;entite. ">ArmorComponent</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>le composant a visiter </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Réimplémentée dans <a class="el" href="classEntityCreator.html#af23e7656c8ee20319bd890aad99a6996">EntityCreator</a>.</p>
 
 </div>
@@ -255,6 +297,14 @@ Fonctions membres publiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Visit le composant <a class="el" href="structSpeedComponent.html" title="Composant definissant la vitesse de l&#39;entite. ">SpeedComponent</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>le composant a visiter </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Réimplémentée dans <a class="el" href="classEntityCreator.html#aee1042f0ec1dc1310ab4c0096d09e094">EntityCreator</a>.</p>
 

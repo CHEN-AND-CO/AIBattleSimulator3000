@@ -148,14 +148,44 @@ struct ArmorComponent: public Component{
   virtual void accept(Visitor& v);
 };
 
+/**
+ *\class Visitor
+ *
+ *\brief Abstraction pour l'utilisation des composants
+ */
 class Visitor{
 public:
   virtual ~Visitor() = 0;
-  
+
+  /**
+   *\brief Visit le composant PositionComponent
+   *
+   *\param comp: le composant a visiter
+   */
   virtual void visit(PositionComponent& comp) {}
+  /**
+   *\brief Visit le composant HealthComponent
+   *
+   *\param comp: le composant a visiter
+   */
   virtual void visit(HealthComponent& comp) {}
+  /**
+   *\brief Visit le composant AttackComponent
+   *
+   *\param comp: le composant a visiter
+   */
   virtual void visit(AttackComponent& comp) {}
+  /**
+   *\brief Visit le composant ArmorComponent
+   *
+   *\param comp: le composant a visiter
+   */
   virtual void visit(ArmorComponent& comp) {}
+  /**
+   *\brief Visit le composant SpeedComponent
+   *
+   *\param comp: le composant a visiter
+   */
   virtual void visit(SpeedComponent& comp) {}
 };
 
